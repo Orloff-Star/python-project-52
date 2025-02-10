@@ -5,4 +5,4 @@ def home(request):
     return HttpResponse("Приветствие!")
 
 def index(request):
-       return render(request, 'myapp/index.html', {'title': 'Home Page'})
+       return render(request, 'index.html', {'title': 'Home Page'})
