@@ -1,8 +1,9 @@
+from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.shortcuts import render
 
 def home(request):
     return HttpResponse("Приветствие!")
 
-def index(request):
-       return render(request, 'index.html', {'title': 'Home Page'})
+class IndexView(TemplateView):
+    template_name = 'index.html'
