@@ -19,5 +19,5 @@ from task_manager import views
 
 
 urlpatterns = [
-    path('', views.index_view, name='home'),
+    path('', views.IndexView.as_view()),
 ]
