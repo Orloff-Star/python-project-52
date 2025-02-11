@@ -15,7 +15,9 @@ from dotenv import load_dotenv
 import os
 import dj_database_url
 
+import logging
 
+logging.basicConfig(level=logging.DEBUG)
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -61,7 +63,7 @@ ROOT_URLCONF = 'task_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'task_manager/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
