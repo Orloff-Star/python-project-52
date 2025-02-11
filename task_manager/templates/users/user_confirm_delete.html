@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load i18n django_bootstrap5 %}
+
+{% block content %}
+
+<h1>Удалить пользователя {{ user.username }}?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+    <a href="{% url 'user_list' %}">Отмена</a>
+</form>
+
+{% endblock %}
