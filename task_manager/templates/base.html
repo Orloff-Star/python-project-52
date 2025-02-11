@@ -15,43 +15,7 @@
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent">
         <span class="navbar-toggler-icon"></span>
       </button>
-  <!--    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'users' %}">{% translate 'Users' %}</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          {% if request.user.is_authenticated %}
-
-          < !-- <li class="nav-item">{{ request.user.username }}</li> -- >
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'statuses' %}">{% translate 'Statuses' %}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'tasks' %}">{% translate 'Tasks' %}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'labels' %}">{% translate 'Labels' %}</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <form action="{% url 'user_logout' %}" class="nav-link" method="post" class="form">
-            {% csrf_token %}
-            <input class="btn nav-link" type="submit" value="{% translate 'Sign Out' %}">
-          </form>
-        </ul>
-
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'user_login' %}">{% translate 'Authorization' %}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'user_create' %}">{% translate 'Sign Up' %}</a>
-          </li>
-          {% endif %}
-        </ul>
-      </div> -->
+ 
     </nav>
     <div class="container">
       {% bootstrap_messages %}

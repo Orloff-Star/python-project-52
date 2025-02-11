@@ -1,0 +1,68 @@
+{% load django_bootstrap5 i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Менеджер задач Hexlet</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ms-3">
+      <a class="navbar-brand" href="/">{% translate 'Task Manager' %}</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  <!--    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'users' %}">{% translate 'Users' %}</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          {% if request.user.is_authenticated %}
+
+          < !-- <li class="nav-item">{{ request.user.username }}</li> -- >
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'statuses' %}">{% translate 'Statuses' %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'tasks' %}">{% translate 'Tasks' %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'labels' %}">{% translate 'Labels' %}</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <form action="{% url 'user_logout' %}" class="nav-link" method="post" class="form">
+            {% csrf_token %}
+            <input class="btn nav-link" type="submit" value="{% translate 'Sign Out' %}">
+          </form>
+        </ul>
+
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user_login' %}">{% translate 'Authorization' %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user_create' %}">{% translate 'Sign Up' %}</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div> -->
+    </nav>
+    <div class="container">
+      {% bootstrap_messages %}
+    </div>
+    <div class="container wrapper flex-grow-1">
+      {% block content %}{% endblock %}
+    </div>
+    <footer>
+      <div class="container my-5 pt-4 border-top">
+        <a target="_blank" href="https://ru.hexlet.io">Hexlet</a>
+      </div>
+    </footer>
+  </body>
+</html>
