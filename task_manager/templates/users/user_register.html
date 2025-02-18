@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+{% load i18n django_bootstrap5 %}
+
+{% block content %}
+
+
+    <h1 class="my-4">{% translate 'Registration' %}</h1>
+        <form method="post" class="form">
+            {% csrf_token %}
+            <table border="1">
+                {% bootstrap_form form %}
+            </table>
+            <input class="btn btn-primary" type="submit" value="Register">
+
+        </form>
+
+        
+<p>{% translate 'Already have an account?' %} <a href="{% url 'user_login' %}">{% translate 'Authorization' %}</a></p>
+
+{% endblock %}

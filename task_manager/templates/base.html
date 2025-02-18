@@ -21,6 +21,35 @@
               <a class="nav-link" href="{% url 'user_list' %}">{% translate 'Users' %}</a>
             </li>
           </ul>
+          <ul class="navbar-nav">
+            {% if request.user.is_authenticated %}
+  
+            <!--<li class="nav-item">
+              <a class="nav-link" href="{% url 'user_list' %}">{% translate 'Statuses' %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'user_list' %}">{% translate 'Tasks' %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'user_list' %}">{% translate 'Labels' %}</a>
+            </li>  -->
+          </ul>
+          <ul class="navbar-nav">
+            <form action="{% url 'user_list' %}" class="nav-link" method="post" class="form">
+              {% csrf_token %}
+              <a class="nav-link" href="{% url 'user_logout' %}">{% translate 'Sign Out' %}</a>
+            </form>
+          </ul>
+  
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'user_login' %}">{% translate 'Authorization' %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">{% translate 'Registration' %}</a>
+            </li>
+            {% endif %}
+          </ul>
  
     </nav>
     <div class="container">
