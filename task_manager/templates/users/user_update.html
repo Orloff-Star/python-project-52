@@ -5,15 +5,16 @@
 
 {% block content %}
 
-<h1 class="my-4">{% translate 'Change user' %}</h1>
-        <form method="post" class="form">
-            {% csrf_token %}
-            <table border="1">
-                {% bootstrap_form user_form %}
-                {% bootstrap_form password_form %}
-            </table>
-            <input class="btn btn-primary" type="submit" value="Change">
 
-        </form>
-
+    <h1 class="my-4">{% translate 'Change user' %}</h1>
+    <form method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_field form.username %}
+        {% bootstrap_field form.first_name %}
+        {% bootstrap_field form.last_name %}
+        {% bootstrap_field password_form.new_password1 %}
+        {% bootstrap_field password_form.new_password2 %}
+        <button type="submit" class="btn btn-primary">{% translate 'Save changes' %}</button>
+    </form>
+        
 {% endblock %}

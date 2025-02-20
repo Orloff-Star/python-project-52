@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.contrib.auth import login, logout, update_session_auth_hash
-from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User
-from .forms import RegisterForm, UserUpdateForm, PasswordChangeForm
+from .forms import RegisterForm, UpdateForm
+from django.utils.translation import gettext as _
+from .forms import UpdateForm, UserPasswordChangeForm
+from django.contrib import messages
+
 
 
 class UserListView(ListView):
@@ -13,54 +14,51 @@ class UserListView(ListView):
     template_name = 'users/user_list.html'
     context_object_name = 'users'
 
-'''class UserCreateView(CreateView):
+
+class UserRegisterViev(CreateView):
     model = User
-    template_name = 'users/user_create.html'
-    fields = ['username', 'password']
-    success_url = reverse_lazy('login')'''
+    form_class = RegisterForm
+    template_name = 'users/user_register.html'
+    success_url = reverse_lazy('user_login')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, _('Registration was successful! You can now log in.'))
+        return response
 
 
-def register(request):
-    if request.method == "POST":
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)  # Автоматический вход после регистрации
-            return redirect("home")  # Перенаправление на главную страницу
-    else:
-        form = RegisterForm()
-    return render(request, "users/user_register.html", {"form": form})
-
-
-'''class UserUpdateView(LoginRequiredMixin, UpdateView):
+class UserUpdateView(UpdateView):
     model = User
+    form_class = UpdateForm
     template_name = 'users/user_update.html'
-    fields = ['first_name', 'last_name', 'username', 'password1', 'password2']
-    success_url = reverse_lazy('user_list')'''
+    success_url = reverse_lazy('home')
 
-#@login_required
-def update(request, pk):
-    instance = get_object_or_404(User, pk=pk)
-    if request.method == 'POST':
-        user_form = UserUpdateForm(request.POST, instance=request.user)
-        password_form = PasswordChangeForm(request.user, request.POST)
-        if user_form.is_valid() and password_form.is_valid():
-            user_form.save()
-            user = password_form.save()
-            update_session_auth_hash(request, user)  # Обновляем сессию, чтобы не разлогинивать пользователя
-            return redirect('user_list')
-    else:
-        user_form = UserUpdateForm(instance=request.user)
-        password_form = PasswordChangeForm(request.user)
+    def get_object(self, queryset=None):
+        return self.request.user
 
-    return render(request, 'users/user_update.html', {
-        'user_form': user_form,
-        'password_form': password_form,
-    })
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.POST:
+            context['password_form'] = UserPasswordChangeForm(user=self.request.user, data=self.request.POST)
+        else:
+            context['password_form'] = UserPasswordChangeForm(user=self.request.user)
+        return context
 
+    def form_valid(self, form):
+        context = self.get_context_data()
+        password_form = context['password_form']
+        if password_form.is_valid():
+            password_form.save()
+        messages.success(self.request, _('User successfully changed'))
+        return super().form_valid(form)
+    
 
 class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = User
     template_name = 'users/user_delete.html'
     success_url = reverse_lazy('user_list')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, _('User deleted successfully'))
+        return super().delete(request, *args, **kwargs)
 

@@ -13,13 +13,13 @@ class RegisterForm(UserCreationForm):
         fields = ['first_name', 'last_name', 'username', 'password1', 'password2']
 
 
-class UserUpdateForm(UserChangeForm):
+class UpdateForm(UserChangeForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'username')
 
 
-class PasswordChangeForm(PasswordChangeForm):
-    class Meta:
-        model = User
-        fields = ('old_password', 'new_password1', 'new_password2')
+class UserPasswordChangeForm(PasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields.pop('old_password', None)
