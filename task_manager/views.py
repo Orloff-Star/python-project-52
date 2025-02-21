@@ -22,11 +22,7 @@ class LoginView(AuthLoginView):
         # Добавляем сообщение об успешном входе
         messages.success(self.request, _('You have successfully logged in!'))
         return super().form_valid(form)
-    
 
-'''def logout_view(request):
-    logout(request)  # Выход из аккаунта
-    return redirect(reverse('home'))  # Перенаправление на страницу входа'''
 
 class CustomLogoutView(LogoutView):
     def dispatch(self, request, *args, **kwargs):

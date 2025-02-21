@@ -6,7 +6,8 @@ from .forms import RegisterForm, UpdateForm
 from django.utils.translation import gettext as _
 from .forms import UpdateForm, UserPasswordChangeForm
 from django.contrib import messages
-
+from django.core.exceptions import PermissionDenied
+from django.shortcuts import redirect
 
 
 class UserListView(ListView):
@@ -27,14 +28,24 @@ class UserRegisterViev(CreateView):
         return response
 
 
-class UserUpdateView(UpdateView):
+class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = User
     form_class = UpdateForm
     template_name = 'users/user_update.html'
     success_url = reverse_lazy('home')
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.error(request, _("You are not authorized! Please log in."))
+            return redirect('user_login')
+        return super().dispatch(request, *args, **kwargs)
+    
     def get_object(self, queryset=None):
-        return self.request.user
+        obj = super().get_object(queryset)
+        if obj != self.request.user:
+            messages.error(self.request, _("You do not have permission to change another user."))
+            raise PermissionDenied  # Это вызовет редирект через middleware
+        return obj
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -58,6 +69,18 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'users/user_delete.html'
     success_url = reverse_lazy('user_list')
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.error(request, _("You are not authorized! Please log in."))
+            return redirect('user_login')
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        if obj != self.request.user:
+            raise PermissionDenied
+        return obj
+    
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, _('User deleted successfully'))
         return super().delete(request, *args, **kwargs)
