@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load i18n django_bootstrap5 %}
+
+{% block content %}
+
+    <h1 class="my-4">{% translate 'Create status' %}</h1>
+        <form method="post" class="form">
+            {% csrf_token %}
+            <table border="1">
+                {% bootstrap_form form %}
+            </table>
+            <button type="submit" class="btn btn-primary">{% translate 'Create' %}</button>
+
+        </form>
+
+{% endblock %}

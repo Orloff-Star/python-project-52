@@ -24,11 +24,11 @@
           <ul class="navbar-nav">
             {% if request.user.is_authenticated %}
   
-            <!--<li class="nav-item">
-              <a class="nav-link" href="{% url 'user_list' %}">{% translate 'Statuses' %}</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'status_list' %}">{% translate 'Statuses' %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'user_list' %}">{% translate 'Tasks' %}</a>
+              <!--<a class="nav-link" href="{% url 'user_list' %}">{% translate 'Tasks' %}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'user_list' %}">{% translate 'Labels' %}</a>
