@@ -3,27 +3,33 @@
 {% load i18n django_bootstrap5 %}
 
 {% block content %}
-<h1 class="my-4">{% translate 'Statuses' %}</h1>
-<a href="{% url 'status_create' %}" class="btn btn-primary">{% translate 'Create status' %}</a>
+<h1 class="my-4">{% translate 'Tasks' %}</h1>
+<a href="{% url 'task_create' %}" class="btn btn-primary">{% translate 'Create task' %}</a>
 <table class="table table-striped">
     <thead>
       <tr>
         <th>ID</th>
         <th>{% translate 'Name' %}</th>
+        <th>{% translate 'Status' %}</th>
+        <th>{% translate 'Author' %}</th>
+        <th>{% translate 'Executor' %}</th>
         <th>{% translate 'Created' %}</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-        {% for status in statuses %}
+        {% for task in tasks %}
         <tr>
-            <td>{{ status.id }}</td>
-            <td>{{ status.name }}</td>
-            <td>{{ status.created_at }}</td>
+            <td>{{ task.id }}</td>
+            <td><a href="{% url 'task_detail' pk=task.pk %}">{{ task.name }}</a></td>
+            <td>{{ task.status }}</td>
+            <td>{{ task.author }}</td>
+            <td>{{ task.executor }}</td>
+            <td>{{ task.created_at }}</td>
             <td>
-            <a href="{% url 'status_update' status.pk %}">{% translate 'Change' %}</a>
+            <a href="{% url 'task_update' task.pk %}">{% translate 'Change' %}</a>
             <br>
-            <a href="{% url 'status_delete' status.pk %}">{% translate 'Delete' %}</a>
+            <a href="{% url 'task_delete' task.pk %}">{% translate 'Delete' %}</a>
             </td>
         </tr>
         {% endfor %}

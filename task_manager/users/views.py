@@ -8,6 +8,7 @@ from .forms import UpdateForm, UserPasswordChangeForm
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import redirect
+from django.core.exceptions import ValidationError
 
 
 class UserListView(ListView):
@@ -43,7 +44,7 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
     def get_object(self, queryset=None):
         obj = super().get_object(queryset)
         if obj != self.request.user:
-            messages.error(self.request, _("You do not have permission to change another user."))
+#            messages.error(self.request, _("You do not have permission to change another user."))
             raise PermissionDenied  # Это вызовет редирект через middleware
         return obj
 
@@ -84,4 +85,19 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, _('User deleted successfully'))
         return super().delete(request, *args, **kwargs)
+
+        '''try:
+            response = super().delete(request, *args, **kwargs)
+            messages.success(request, 'Пользователь успешно удален.')
+            return response
+        except ValidationError as e:
+            messages.error(request, str(e))
+            return redirect('user_list')
+           
+        def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.author.all().exists() or self.object.executor.all().exists():  # Проверка, связан ли user с задачами
+            messages.error(request, _("Cannot delete user because it is in use"))
+            return redirect('user_list')
+        return super().post(request, *args, **kwargs)'''
 

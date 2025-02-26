@@ -14,7 +14,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 import dj_database_url
-
+from django.contrib.messages import constants as messages
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'task_manager.users',
     'task_manager.statuses',
+    'task_manager.tasks',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 LOGIN_URL = 'user_login'
+
+MESSAGE_TAGS = {
+    messages. ERROR: 'danger',
+}

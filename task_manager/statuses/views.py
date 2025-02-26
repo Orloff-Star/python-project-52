@@ -11,7 +11,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .forms import StatusForm
 
 
-class StatusListView(ListView):
+class StatusListView(LoginRequiredMixin, ListView):
     model = Status
     template_name = 'statuses/status_list.html'
     context_object_name = 'statuses'
@@ -51,9 +51,9 @@ class StatusDeleteView(SuccessMessageMixin, DeleteView):
     success_url = reverse_lazy('status_list')
     success_message = _("The status was successfully deleted.")
 
-    '''def post(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         if self.object.task_set.exists():  # Проверка, связан ли статус с задачами
             messages.error(request, _("Cannot delete status because it is in use"))
             return redirect('status_list')
-        return super().post(request, *args, **kwargs)'''
+        return super().post(request, *args, **kwargs)
