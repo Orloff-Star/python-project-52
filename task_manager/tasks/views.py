@@ -8,6 +8,9 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.contrib.messages.views import SuccessMessageMixin
 from .forms import TaskForm
+from task_manager.statuses.models import Status
+from django.contrib.auth.models import User
+#from task_manager.labels.models import Label
 
 
 class TaskListView(LoginRequiredMixin, ListView):
@@ -20,6 +23,40 @@ class TaskListView(LoginRequiredMixin, ListView):
             messages.error(request, _("You are not authorized! Please log in."))
             return redirect('user_login')
         return super().dispatch(request, *args, **kwargs)
+    
+    def get_queryset(self):
+#        Фильтрация задач на основе параметров запроса.
+        queryset = super().get_queryset()
+
+        # Фильтр по статусу
+        status = self.request.GET.get('status')
+        if status:
+            queryset = queryset.filter(status_id=status)
+
+        # Фильтр по исполнителю
+        executor = self.request.GET.get('executor')
+        if executor:
+            queryset = queryset.filter(executor_id=executor)
+
+        # Фильтр по метке
+#        label = self.request.GET.get('label')
+ #       if label:
+ #           queryset = queryset.filter(labels__id=label)
+
+        # Фильтр по задачам текущего пользователя
+        self_tasks = self.request.GET.get('self_tasks')
+        if self_tasks:
+            queryset = queryset.filter(author=self.request.user)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        #Добавляем в контекст данные для фильтров.
+        context = super().get_context_data(**kwargs)
+        context['statuses'] = Status.objects.all()  # Все статусы для фильтра
+        context['executors'] = User.objects.all()  # Все исполнители для фильтра
+#        context['labels'] = Label.objects.all()  # Все метки для фильтра
+        return context
 
 
 class TaskDetailView(LoginRequiredMixin, DetailView):
