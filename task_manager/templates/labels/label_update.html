@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+
+{% load i18n django_bootstrap5 %}
+
+{% block content %}
+
+
+    <h1 class="my-4">{% translate 'Change label' %}</h1>
+    <form method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_field form.name %}
+        <button type="submit" class="btn btn-primary">{% translate 'Save changes' %}</button>
+    </form>
+        
+{% endblock %}

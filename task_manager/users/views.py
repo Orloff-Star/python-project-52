@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
+from task_manager.views import CheckAuthorizationViev
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User
 from .forms import RegisterForm, UpdateForm
@@ -28,17 +28,11 @@ class UserRegisterViev(CreateView):
         return response
 
 
-class UserUpdateView(LoginRequiredMixin, UpdateView):
+class UserUpdateView(CheckAuthorizationViev, UpdateView):
     model = User
     form_class = UpdateForm
     template_name = 'users/user_update.html'
     success_url = reverse_lazy('home')
-
-    def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            messages.error(request, _("You are not authorized! Please log in."))
-            return redirect('user_login')
-        return super().dispatch(request, *args, **kwargs)
     
     def get_object(self, queryset=None):
         obj = super().get_object(queryset)
@@ -63,16 +57,10 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
     
 
-class UserDeleteView(LoginRequiredMixin, DeleteView):
+class UserDeleteView(CheckAuthorizationViev, DeleteView):
     model = User
     template_name = 'users/user_delete.html'
     success_url = reverse_lazy('user_list')
-
-    def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            messages.error(request, _("You are not authorized! Please log in."))
-            return redirect('user_login')
-        return super().dispatch(request, *args, **kwargs)
 
     def get_object(self, queryset=None):
         obj = super().get_object(queryset)

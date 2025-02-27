@@ -1,8 +1,7 @@
 from django.views.generic import TemplateView
-from django.http import HttpResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from django.contrib.auth.views import LoginView, LogoutView
-from django.urls import reverse_lazy
+from django.contrib.auth.views import LogoutView
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.urls import reverse
@@ -30,3 +29,11 @@ class CustomLogoutView(LogoutView):
 #        response = super().dispatch(request, *args, **kwargs)
         messages.info(request, _("You have successfully logged out."))
         return redirect(reverse('home'))
+
+
+class CheckAuthorizationViev(LoginRequiredMixin):
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.error(request, _("You are not authorized! Please log in."))
+            return redirect('user_login')
+        return super().dispatch(request, *args, **kwargs)

@@ -35,6 +35,6 @@ class StatusCRUDTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Status.objects.filter(pk=self.status.pk).exists())
 
-    '''def test_unauthorized_access(self):
+    def test_unauthorized_access(self):
         response = self.client.get(reverse('status_list'))
-        self.assertEqual(response.status_code, 302)'''
+        self.assertEqual(response.status_code, 302)
