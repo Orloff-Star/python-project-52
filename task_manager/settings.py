@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
+import rollbar
 import os
 import dj_database_url
 from django.contrib.messages import constants as messages
@@ -64,6 +65,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'task_manager.users.middleware.PermissionDeniedMiddleware',
+    #'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
+    'task_manager.rollbar_middleware.CustomRollbarNotifierMiddleware',
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -144,6 +147,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
+
 LOGOUT_REDIRECT_URL = 'home'
 
 LOGIN_URL = 'user_login'
@@ -151,3 +155,31 @@ LOGIN_URL = 'user_login'
 MESSAGE_TAGS = {
     messages. ERROR: 'danger',
 }
+
+ROLLBAR = {
+    'access_token': 'c99682efa1fc4f2bb1e7c0a23afea780',
+    'environment': 'development' if DEBUG else 'production',
+    'code_version': '1.0',
+    'root': BASE_DIR,
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'rollbar': {
+            'level': 'ERROR',
+            'class': 'rollbar.logger.RollbarHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['rollbar'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
+# Инициализация Rollbar
+rollbar.init(**ROLLBAR)

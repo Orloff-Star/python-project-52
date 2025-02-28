@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from task_manager import views
+from .views import test_error
 
 
 urlpatterns = [
@@ -28,4 +29,5 @@ urlpatterns = [
     path('tasks/', include('task_manager.tasks.urls')),
     path('labels/', include('task_manager.labels.urls')),
     path('admin/', admin.site.urls),
+    path('test-error/', test_error, name='test_error'),
 ]

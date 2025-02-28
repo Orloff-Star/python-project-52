@@ -37,3 +37,18 @@ class CheckAuthorizationViev(LoginRequiredMixin):
             messages.error(request, _("You are not authorized! Please log in."))
             return redirect('user_login')
         return super().dispatch(request, *args, **kwargs)
+    
+
+from django.http import HttpResponse
+import logging
+
+logger = logging.getLogger(__name__)
+
+def test_error(request):
+    try:
+        # Генерируем ошибку
+        1 / 0
+    except Exception as e:
+        # Логируем ошибку
+        logger.error(str(e), exc_info=True)
+        return HttpResponse("Произошла ошибка, но она была залогирована в Rollbar.")
