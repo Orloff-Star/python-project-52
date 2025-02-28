@@ -65,8 +65,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'task_manager.users.middleware.PermissionDeniedMiddleware',
-    #'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
-    'task_manager.rollbar_middleware.CustomRollbarNotifierMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
+    #'task_manager.rollbar_middleware.CustomRollbarNotifierMiddleware',
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
