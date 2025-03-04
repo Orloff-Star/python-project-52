@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "Task manager - This is a site that allows you to create and track tasks."
 readme = "README.md"
 authors = ["EagleStar <sys-leek@mail.ru>"]
+packages = [
+  { include = "task_manager" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
