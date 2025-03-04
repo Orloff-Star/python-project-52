@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.contrib import messages
 from django.utils.translation import gettext as _
 
+
 class PermissionDeniedMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
@@ -13,6 +14,9 @@ class PermissionDeniedMiddleware:
 
     def process_exception(self, request, exception):
         if isinstance(exception, PermissionDenied):
-            messages.error(request, _("You do not have permission to change another user."))
-            return redirect(request.META.get('HTTP_REFERER', '/'))  # Редирект на предыдущую страницу
+            messages.error(
+                request,
+                _("You do not have permission to change another user.")
+            )
+            return redirect(request.META.get('HTTP_REFERER', '/'))
         return None

@@ -1,6 +1,5 @@
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth import logout
 from django.shortcuts import redirect
@@ -8,6 +7,9 @@ from django.urls import reverse
 from django.contrib.auth.views import LoginView as AuthLoginView
 from django.contrib import messages
 from django.utils.translation import gettext as _
+from django.http import HttpResponse
+import logging
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -19,7 +21,10 @@ class LoginView(AuthLoginView):
 
     def form_valid(self, form):
         # Добавляем сообщение об успешном входе
-        messages.success(self.request, _('You have successfully logged in!'))
+        messages.success(
+            self.request,
+            _('You have successfully logged in!')
+        )
         return super().form_valid(form)
 
 
@@ -34,15 +39,16 @@ class CustomLogoutView(LogoutView):
 class CheckAuthorizationViev(LoginRequiredMixin):
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
-            messages.error(request, _("You are not authorized! Please log in."))
+            messages.error(
+                request,
+                _("You are not authorized! Please log in.")
+            )
             return redirect('user_login')
         return super().dispatch(request, *args, **kwargs)
-    
 
-from django.http import HttpResponse
-import logging
 
 logger = logging.getLogger(__name__)
+
 
 def test_error(request):
     try:
@@ -51,4 +57,6 @@ def test_error(request):
     except Exception as e:
         # Логируем ошибку
         logger.error(str(e), exc_info=True)
-        return HttpResponse("Произошла ошибка, но она была залогирована в Rollbar.")
+        return HttpResponse(
+            "Произошла ошибка, но она была залогирована в Rollbar."
+        )

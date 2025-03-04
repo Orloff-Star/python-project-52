@@ -7,7 +7,6 @@ from django.utils.translation import gettext as _
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.contrib.messages.views import SuccessMessageMixin
-from .forms import StatusForm
 
 
 class StatusListView(CheckAuthorizationViev, ListView):
@@ -16,7 +15,10 @@ class StatusListView(CheckAuthorizationViev, ListView):
     context_object_name = 'statuses'
 
 
-class StatusCreateView(CheckAuthorizationViev, SuccessMessageMixin, CreateView):
+class StatusCreateView(CheckAuthorizationViev,
+                       SuccessMessageMixin,
+                       CreateView
+                       ):
     model = Status
     form_class = StatusForm
     template_name = 'statuses/status_create.html'
@@ -24,7 +26,10 @@ class StatusCreateView(CheckAuthorizationViev, SuccessMessageMixin, CreateView):
     success_message = _("The status has been created successfully.")
 
 
-class StatusUpdateView(CheckAuthorizationViev, SuccessMessageMixin, UpdateView):
+class StatusUpdateView(CheckAuthorizationViev,
+                       SuccessMessageMixin,
+                       UpdateView
+                       ):
     model = Status
     form_class = StatusForm
     template_name = 'statuses/status_update.html'
@@ -32,7 +37,10 @@ class StatusUpdateView(CheckAuthorizationViev, SuccessMessageMixin, UpdateView):
     success_message = _("Status changed successfully.")
 
 
-class StatusDeleteView(CheckAuthorizationViev, SuccessMessageMixin, DeleteView):
+class StatusDeleteView(CheckAuthorizationViev,
+                       SuccessMessageMixin,
+                       DeleteView
+                       ):
     model = Status
     template_name = 'statuses/status_delete.html'
     success_url = reverse_lazy('status_list')
@@ -40,7 +48,10 @@ class StatusDeleteView(CheckAuthorizationViev, SuccessMessageMixin, DeleteView):
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
-        if self.object.task_set.exists():  # Проверка, связан ли статус с задачами
-            messages.error(request, _("Cannot delete status because it is in use"))
+        if self.object.task_set.exists():
+            messages.error(
+                request,
+                _("Cannot delete status because it is in use")
+            )
             return redirect('status_list')
         return super().post(request, *args, **kwargs)
