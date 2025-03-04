@@ -3,8 +3,15 @@ name = "hexlet-code"
 version = "0.1.0"
 description = "Task manager - This is a site that allows you to create and track tasks."
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = []
+authors = ["EagleStar <sys-leek@mail.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^5.0.8"
+python-dotenv = "^1.0.1"
+django-bootstrap5 = "^24.2"
+gunicorn = "^22.0.0"
+rollbar = "^0.16.3"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.1.1"
