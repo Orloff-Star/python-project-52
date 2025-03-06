@@ -30,7 +30,7 @@ class UserCRUDTest(TestCase):
         }
 
         # Отправляем POST-запрос на регистрацию
-        response = self.client.post(reverse('register'), data)
+        response = self.client.post(reverse('user_create'), data)
 
         # Проверяем, что пользователь был создан
         self.assertTrue(User.objects.filter(username='newuser').exists())

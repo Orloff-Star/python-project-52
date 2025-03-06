@@ -3,7 +3,7 @@ from task_manager.users import views
 
 urlpatterns = [
     path('', views.UserListView.as_view(), name='user_list'),
-    path('register/', views.UserRegisterViev.as_view(), name='register'),
+    path('create/', views.UserCreateViev.as_view(), name='user_create'),
     path('<int:pk>/update/',
          views.UserUpdateView.as_view(),
          name='user_update'

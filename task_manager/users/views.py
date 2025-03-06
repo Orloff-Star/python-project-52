@@ -20,10 +20,10 @@ class UserListView(ListView):
     context_object_name = 'users'
 
 
-class UserRegisterViev(CreateView):
+class UserCreateViev(CreateView):
     model = User
     form_class = RegisterForm
-    template_name = 'users/user_register.html'
+    template_name = 'users/user_create.html'
     success_url = reverse_lazy('user_login')
 
     def form_valid(self, form):
