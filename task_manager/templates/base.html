@@ -37,13 +37,13 @@
           <ul class="navbar-nav">
             <form action="{% url 'user_list' %}" class="nav-link" method="post" class="form">
               {% csrf_token %}
-              <a class="nav-link" href="{% url 'user_logout' %}">{% translate 'Sign Out' %}</a>
+              <a class="nav-link" href="{% url 'user_logout' %}">{% translate 'Exit' %}</a>
             </form>
           </ul>
   
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'user_login' %}">{% translate 'Authorization' %}</a>
+              <a class="nav-link" href="{% url 'user_login' %}">{% translate 'Entrance' %}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'user_create' %}">{% translate 'Registration' %}</a>
