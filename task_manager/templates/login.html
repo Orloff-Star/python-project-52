@@ -7,7 +7,7 @@
 <h1 class="my-4">{% translate 'Entrance' %}</h1>
     <form method="post">
     {% csrf_token %}
-        {% bootstrap_field form.username label="Имя пользователя" %}
+        {% bootstrap_form form %}
     </table>
         <input class="btn btn-primary" type="submit" value="Войти">
     </form>

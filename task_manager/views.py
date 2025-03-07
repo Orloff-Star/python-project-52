@@ -8,6 +8,7 @@ from django.contrib.auth.views import LoginView as AuthLoginView
 from django.contrib import messages
 from django.utils.translation import gettext as _
 from django.http import HttpResponse
+from task_manager.form import CustomAuthenticationForm
 import logging
 
 
@@ -16,6 +17,7 @@ class IndexView(TemplateView):
 
 
 class LoginView(AuthLoginView):
+    form_class = CustomAuthenticationForm
     template_name = 'login.html'
     redirect_authenticated_user = True
 
