@@ -21,35 +21,35 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 #: task_manager/templates/base.html:14
 msgid "Task Manager"
-msgstr ""
+msgstr "Менеджер задач"
 
 #: task_manager/templates/base.html:21
 msgid "Users"
-msgstr ""
+msgstr "Пользователи"
 
 #: task_manager/templates/base.html:29
 msgid "Statuses"
-msgstr ""
+msgstr "Статусы"
 
 #: task_manager/templates/base.html:32
 msgid "Tasks"
-msgstr ""
+msgstr "Задачи"
 
 #: task_manager/templates/base.html:35
 msgid "Labels"
-msgstr ""
+msgstr "Метки"
 
 #: task_manager/templates/base.html:41
 msgid "Sign Out"
-msgstr ""
+msgstr "Выход"
 
 #: task_manager/templates/base.html:47
 msgid "Authorization"
-msgstr ""
+msgstr "Авторизация"
 
 #: task_manager/templates/base.html:50
 msgid "Sign Up"
-msgstr ""
+msgstr "Вход"
 
 #: task_manager/templates/index.html:9
 msgid "Hello from hexlet"
@@ -62,3 +62,167 @@ msgstr ""
 #: task_manager/templates/index.html:12
 msgid "Learn more"
 msgstr ""
+
+#tasks.html.
+msgid "Task view"
+msgstr "Просмотр задачи"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Executor"
+msgstr "Исполнитель"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Statuses"
+msgstr "Статусы"
+
+msgid "Created at"
+msgstr "Создано"
+
+msgid "Labels:"
+msgstr "Метки:"
+
+msgid "Labels"
+msgstr "Метки"
+
+msgid "Edit"
+msgstr "Изменить"
+
+msgid "Edit status"
+msgstr "Изменение статуса"
+
+msgid "Delete"
+msgstr "Удалить"
+
+# base.html
+msgid "Hello from Hexlet!"
+msgstr "Привет от Хекслета!"
+
+msgid "Practical programming courses."
+msgstr "Практические курсы по программированию."
+
+msgid "Learn more"
+msgstr "Узнать больше"
+
+# 2register.html
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+# users.html
+msgid "ID"
+msgstr "ID"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Full name"
+msgstr "Полное имя"
+
+msgid "Creation date"
+msgstr "Дата создания"
+
+
+msgid "Task manager"
+msgstr "Менеджер задач"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Hexlet"
+msgstr "Хекслет"
+
+msgid "Task Create"
+msgstr "Создать задачу"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Overview"
+msgstr "Описание"
+
+msgid "Select Status"
+msgstr "Выберете статус"
+
+msgid "No available statuses"
+msgstr "Нет доступных статусов"
+
+msgid "Исполнитель"
+msgstr "Performer"
+
+msgid "Выберите исполнителя"
+msgstr "Choose a performer"
+
+msgid "Нет доступных исполнителей"
+msgstr "No available performers"
+
+msgid "Enter Label"
+msgstr "Введите метку"
+
+msgid "LoginButton"
+msgstr "Войти"
+
+msgid "RegisterButton"
+msgstr "Зарегистрировать"
+
+msgid "Create Status"
+msgstr "Создать статус"
+
+msgid "Deletion of Status"
+msgstr "Удаление статуса"
+
+msgid "Deletion of Label"
+msgstr "Удаление метки"
+
+msgid "Are you sure you want to delete the status"
+msgstr "Вы уверены, что хотите удалить статус"
+
+msgid "Are you sure you want to delete the label"
+msgstr "Вы уверены, что хотите удалить метку"
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "Task manager Hexlet"
+msgstr "Менеджер задач Hexlet"
+
+msgid "Tasks"
+msgstr "Задачи"
+
+msgid "Create task"
+msgstr "Создать задачу"
+
+msgid "Edit Task"
+msgstr "Изменить задачу"
+
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+msgid "Create Label"
+msgstr "Создать метку"
+
+msgid "Update Label"
+msgstr "Изменение метки"
+
+msgid "Select Executor"
+msgstr "Выберете исполнителя"
+
+msgid "Select Label"
+msgstr "Выберете исполнителя"
+
+msgid "Label"
+msgstr "Метка"
+
+msgid "Show"
+msgstr "Показать"
+
+msgid "Only my tasks"
+msgstr "Только свои задачи"
+
+msgid "Please fill out this field"
+msgstr "Пожалуйста, заполните это поле"
+
+msgid "Task Modification"
+msgstr "Изменение задачи"
