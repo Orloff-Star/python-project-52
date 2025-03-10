@@ -30,7 +30,7 @@ class UserCreateViev(CreateView):
         response = super().form_valid(form)
         messages.success(
             self.request,
-            _('Registration was successful! You can now log in.')
+            _('Пользователь успешно зарегистрирован')
         )
         return response
 
@@ -65,7 +65,7 @@ class UserUpdateView(CheckAuthorizationViev, UpdateView):
         password_form = context['password_form']
         if password_form.is_valid():
             password_form.save()
-        messages.success(self.request, _('User successfully changed'))
+        messages.success(self.request, _('Пользователь успешно обновлен'))
         return super().form_valid(form)
 
 
@@ -81,7 +81,7 @@ class UserDeleteView(CheckAuthorizationViev, DeleteView):
         return obj
 
     def delete(self, request, *args, **kwargs):
-        messages.success(self.request, _('User deleted successfully'))
+        messages.success(self.request, _('Пользователь успешно удален'))
         return super().delete(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
