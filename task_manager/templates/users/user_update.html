@@ -8,10 +8,10 @@
 
     <h1 class="my-4">{% translate 'Change user' %}</h1>
     <form method="post" class="form">
-        {% csrf_token %}
-        {% bootstrap_field form.username %}
+        {% csrf_token %}        
         {% bootstrap_field form.first_name %}
         {% bootstrap_field form.last_name %}
+        {% bootstrap_field form.username %}
         {% bootstrap_field password_form.password1 %}
         {% bootstrap_field password_form.password2 %}
         <button type="submit" class="btn btn-primary">{% translate 'Save changes' %}</button>
