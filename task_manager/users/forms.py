@@ -10,10 +10,10 @@ from django.contrib.auth.models import User
 
 
 class RegisterForm(UserCreationForm):
-    first_name = forms.CharField(label=_('Name'),
+    first_name = forms.CharField(label=_('Имя'),
                                  widget=forms.TextInput()
                                  )
-    last_name = forms.CharField(label=_('Surname'),
+    last_name = forms.CharField(label=_('Фамилия'),
                                 widget=forms.TextInput()
                                 )
 
