@@ -25,7 +25,7 @@ class LoginView(AuthLoginView):
         # Добавляем сообщение об успешном входе
         messages.success(
             self.request,
-            _('You have successfully logged in!')
+            _('You are logged in')
         )
         return super().form_valid(form)
 
@@ -34,7 +34,7 @@ class CustomLogoutView(LogoutView):
     def dispatch(self, request, *args, **kwargs):
         logout(request)
 #        response = super().dispatch(request, *args, **kwargs)
-        messages.info(request, _("You have successfully logged out."))
+        messages.info(request, _("You are logged out"))
         return redirect(reverse('home'))
 
 
