@@ -40,28 +40,28 @@ msgid "Labels"
 msgstr "Метки"
 
 #: task_manager/templates/base.html:41
-msgid "Sign Out"
+msgid "Exit"
 msgstr "Выход"
 
 #: task_manager/templates/base.html:47
-msgid "Authorization"
-msgstr "Авторизация"
+msgid "Entrance"
+msgstr "Вход"
 
 #: task_manager/templates/base.html:50
-msgid "Sign Up"
-msgstr "Вход"
+msgid "Registration"
+msgstr "Регистрация"
 
 #: task_manager/templates/index.html:9
 msgid "Hello from hexlet"
-msgstr ""
+msgstr "Привет от Хекслета!"
 
 #: task_manager/templates/index.html:10
-msgid "Practical programming courses"
+msgid "Практические курсы по программированию"
 msgstr ""
 
 #: task_manager/templates/index.html:12
 msgid "Learn more"
-msgstr ""
+msgstr "Узнать больше"
 
 #tasks.html.
 msgid "Task view"

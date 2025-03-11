@@ -18,35 +18,35 @@
         <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'user_list' %}">{% translate 'Пользователи' %}</a>
+              <a class="nav-link" href="{% url 'user_list' %}">{% translate 'Users' %}</a>
             </li>
           </ul>
           <ul class="navbar-nav">
             {% if request.user.is_authenticated %}
   
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'status_list' %}">{% translate 'Статусы' %}</a>
+              <a class="nav-link" href="{% url 'status_list' %}">{% translate 'Statuses' %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'task_list' %}">{% translate 'Задачи' %}</a>
+              <a class="nav-link" href="{% url 'task_list' %}">{% translate 'Tasks' %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'label_list' %}">{% translate 'Метки' %}</a>
+              <a class="nav-link" href="{% url 'label_list' %}">{% translate 'Labels' %}</a>
             </li>
           </ul>
           <ul class="navbar-nav">
             <form action="{% url 'user_list' %}" class="nav-link" method="post" class="form">
               {% csrf_token %}
-              <a class="nav-link" href="{% url 'user_logout' %}">{% translate 'Выход' %}</a>
+              <a class="nav-link" href="{% url 'user_logout' %}">{% translate 'Exit' %}</a>
             </form>
           </ul>
   
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'user_login' %}">Вход</a>
+              <a class="nav-link" href="{% url 'user_login' %}">{% translate 'Entrance' %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'user_create' %}">{% translate 'Регистрация' %}</a>
+              <a class="nav-link" href="{% url 'user_create' %}">{% translate 'Registration' %}</a>
             </li>
             {% endif %}
           </ul>

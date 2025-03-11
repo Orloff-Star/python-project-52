@@ -17,6 +17,7 @@ import os
 from django.contrib.messages import constants as messages
 import logging
 import dj_database_url
+from django.utils.translation import gettext_lazy as _
 
 logging.basicConfig(level=logging.DEBUG)
 load_dotenv()
@@ -68,6 +69,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'task_manager.users.middleware.PermissionDeniedMiddleware',
     'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -136,7 +138,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'ru-RU'
+#LANGUAGE_CODE = 'ru-RU'
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('ru', _('Russian')),
+]
+
+LOCALE_PATHS = [
+    BASE_DIR / 'task_manager.locale',
+]
 
 TIME_ZONE = 'UTC'
 
