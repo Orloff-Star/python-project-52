@@ -76,17 +76,11 @@ msgstr "Исполнитель"
 msgid "Status"
 msgstr "Статус"
 
-msgid "Statuses"
-msgstr "Статусы"
-
 msgid "Created at"
 msgstr "Создано"
 
 msgid "Labels:"
 msgstr "Метки:"
-
-msgid "Labels"
-msgstr "Метки"
 
 msgid "Edit"
 msgstr "Изменить"
@@ -96,16 +90,6 @@ msgstr "Изменение статуса"
 
 msgid "Delete"
 msgstr "Удалить"
-
-# base.html
-msgid "Hello from Hexlet!"
-msgstr "Привет от Хекслета!"
-
-msgid "Practical programming courses."
-msgstr "Практические курсы по программированию."
-
-msgid "Learn more"
-msgstr "Узнать больше"
 
 # 2register.html
 msgid "Sign up"
@@ -187,9 +171,6 @@ msgstr "Создать"
 
 msgid "Task manager Hexlet"
 msgstr "Менеджер задач Hexlet"
-
-msgid "Tasks"
-msgstr "Задачи"
 
 msgid "Create task"
 msgstr "Создать задачу"
