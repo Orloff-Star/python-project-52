@@ -138,12 +138,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 
-'''LANGUAGES = [
+LANGUAGES = [
     ('en', _('English')),
     ('ru', _('Russian')),
 ]
 
-LOCALE_PATHS = [
+'''LOCALE_PATHS = [
     BASE_DIR / 'task_manager.locale',
 ]'''
 
