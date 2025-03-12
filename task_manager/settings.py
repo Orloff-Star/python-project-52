@@ -147,7 +147,7 @@ LOCALE_PATHS = [
     BASE_DIR / 'task_manager.locale',
 ]
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
