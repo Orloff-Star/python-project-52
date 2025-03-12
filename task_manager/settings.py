@@ -69,7 +69,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'task_manager.users.middleware.PermissionDeniedMiddleware',
     'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -139,16 +138,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 
-LANGUAGES = [
+'''LANGUAGES = [
     ('en', _('English')),
     ('ru', _('Russian')),
 ]
 
 LOCALE_PATHS = [
     BASE_DIR / 'task_manager.locale',
-]
+]'''
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
