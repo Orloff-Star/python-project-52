@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load django_bootstrap5 i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +43,7 @@
   
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'user_login' %}">{% trans "Entrance" %}</a>
+              <a class="nav-link" href="{% url 'user_login' %}">{% trans "Вход" %}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'user_create' %}">{% trans "Registration" %}</a>

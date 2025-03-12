@@ -11,7 +11,7 @@ compilemessages:
 	django-admin compilemessages
 
 makemessages:
-	django-admin makemessages --ignore="static" --ignore=".env" -l en
+	django-admin makemessages -l ru
 
 migrate:
 	poetry run python manage.py makemigrations
