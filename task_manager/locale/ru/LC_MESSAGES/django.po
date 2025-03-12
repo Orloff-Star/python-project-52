@@ -22,7 +22,7 @@ msgstr ""
 
 #: form.py:10
 msgid "Пароль"
-msgstr ""
+msgstr "Пароль"
 
 #: labels/views.py:23
 msgid "The label has been created successfully."
@@ -42,11 +42,11 @@ msgstr "Невозможно удалить метку, так как она и�
 
 #: settings.py:142
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 #: settings.py:143
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
 #: statuses/views.py:26
 msgid "The status has been created successfully."
@@ -244,7 +244,7 @@ msgstr "Изменить задачу"
 
 #: templates/users/user_create.html:15
 msgid "Зарегистрировать"
-msgstr ""
+msgstr "Зарегистрировать"
 
 #: templates/users/user_create.html:20
 msgid "Already have an account?"
@@ -280,7 +280,7 @@ msgstr "Имя"
 
 #: users/forms.py:16
 msgid "Фамилия"
-msgstr ""
+msgstr "Фамилия"
 
 #: users/middleware.py:19
 msgid "You do not have permission to change another user."
@@ -288,15 +288,15 @@ msgstr "У вас нет разрешения на изменение друго
 
 #: users/views.py:33
 msgid "Пользователь успешно зарегистрирован"
-msgstr ""
+msgstr "Пользователь успешно зарегистрирован"
 
 #: users/views.py:68
 msgid "Пользователь успешно обновлен"
-msgstr ""
+msgstr "Пользователь успешно обновлен"
 
 #: users/views.py:84
 msgid "Пользователь успешно удален"
-msgstr ""
+msgstr "Пользователь успешно удален"
 
 #: users/views.py:93
 msgid "Cannot delete user because it is in use"
@@ -304,11 +304,11 @@ msgstr "Невозможно удалить пользователя, так к�
 
 #: views.py:28
 msgid "Вы залогинены"
-msgstr ""
+msgstr "Вы залогинены"
 
 #: views.py:37
 msgid "Вы разлогинены"
-msgstr ""
+msgstr "Вы разлогинены"
 
 #: views.py:46
 msgid "You are not authorized! Please log in."
