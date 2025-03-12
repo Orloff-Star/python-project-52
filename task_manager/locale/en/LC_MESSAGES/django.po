@@ -1,0 +1,304 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-12 11:02+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: form.py:10
+msgid "Пароль"
+msgstr ""
+
+#: labels/views.py:23
+msgid "The label has been created successfully."
+msgstr "Метка успешно создана."
+
+#: labels/views.py:31
+msgid "Label changed successfully."
+msgstr "Метка успешно обновлена."
+
+#: labels/views.py:38
+msgid "The label was successfully deleted."
+msgstr "Метка успешно удалена."
+
+#: labels/views.py:44
+msgid "Cannot delete label because it is in use"
+msgstr "Невозможно удалить метку, так как она используется"
+
+#: statuses/views.py:26
+msgid "The status has been created successfully."
+msgstr "Статус успешно создан."
+
+#: statuses/views.py:37
+msgid "Status changed successfully."
+msgstr "Статус успешно изменен."
+
+#: statuses/views.py:47
+msgid "The status was successfully deleted."
+msgstr "Статус успешно удален."
+
+#: statuses/views.py:54
+msgid "Cannot delete status because it is in use"
+msgstr "Невозможно удалить статус, так как он используется"
+
+#: tasks/views.py:71
+msgid "The task has been created successfully."
+msgstr "Задача успешно создана"
+
+#: tasks/views.py:81
+msgid "Task changed successfully."
+msgstr "Задача успешно обновлена"
+
+#: tasks/views.py:88
+msgid "The task was successfully deleted."
+msgstr "Задача успешно удалена"
+
+#: tasks/views.py:95
+msgid "Only its author can delete a task."
+msgstr "Удалить задачу может только ее автор."
+
+#: templates/base.html:14
+msgid "Task Manager"
+msgstr "Менеджер задач"
+
+#: templates/base.html:21
+msgid "Users"
+msgstr "Пользователи"
+
+#: templates/base.html:28 templates/statuses/status_list.html:6
+msgid "Statuses"
+msgstr "Статусы"
+
+#: templates/base.html:31 templates/tasks/task_list.html:7
+msgid "Tasks"
+msgstr "Задачи"
+
+#: templates/base.html:34 templates/labels/label_list.html:6
+msgid "Labels"
+msgstr "Метки"
+
+#: templates/base.html:40
+msgid "Exit"
+msgstr "Выход"
+
+#: templates/base.html:46 templates/login.html:7
+msgid "Entrance"
+msgstr "Вход"
+
+#: templates/base.html:49 templates/users/user_create.html:9
+msgid "Registration"
+msgstr "Регистрация"
+
+#: templates/index.html:9
+msgid "Hello from hexlet"
+msgstr "Привет, Хекслес"
+
+#: templates/index.html:10
+msgid "Practical programming courses"
+msgstr "Практические курсы программирования"
+
+#: templates/index.html:12
+msgid "Learn more"
+msgstr "Узнать больше"
+
+#: templates/labels/label_create.html:7 templates/labels/label_list.html:7
+msgid "Create label"
+msgstr "Создать метку"
+
+#: templates/labels/label_create.html:12
+#: templates/statuses/status_create.html:13 templates/tasks/task_create.html:12
+msgid "Create"
+msgstr "Создать"
+
+#: templates/labels/label_delete.html:9
+msgid "Deleting a label"
+msgstr "Удалить метку"
+
+#: templates/labels/label_delete.html:11
+#: templates/statuses/status_delete.html:11 templates/tasks/task_delete.html:11
+#: templates/users/user_delete.html:12
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить?"
+
+#: templates/labels/label_delete.html:13
+#: templates/statuses/status_delete.html:13 templates/tasks/task_delete.html:13
+#: templates/users/user_delete.html:14
+msgid "Yes, delete it!"
+msgstr "Да, удалить!"
+
+#: templates/labels/label_delete.html:14
+#: templates/statuses/status_delete.html:14 templates/tasks/task_delete.html:14
+#: templates/users/user_delete.html:15
+msgid "Сancellation"
+msgstr "Отмена"
+
+#: templates/labels/label_list.html:12 templates/statuses/status_list.html:12
+#: templates/tasks/task_list.html:70
+msgid "Name"
+msgstr "Имя"
+
+#: templates/labels/label_list.html:13 templates/statuses/status_list.html:13
+#: templates/tasks/task_list.html:74 templates/users/user_list.html:13
+msgid "Created"
+msgstr "Создать"
+
+#: templates/labels/label_list.html:24 templates/statuses/status_list.html:24
+#: templates/tasks/task_detail.html:42 templates/tasks/task_list.html:88
+#: templates/users/user_list.html:25
+msgid "Change"
+msgstr "Изменить"
+
+#: templates/labels/label_list.html:26 templates/statuses/status_list.html:26
+#: templates/tasks/task_detail.html:44 templates/tasks/task_list.html:90
+#: templates/users/user_list.html:27
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/labels/label_update.html:9
+msgid "Change label"
+msgstr "Изменить метку"
+
+#: templates/labels/label_update.html:13
+#: templates/statuses/status_update.html:13 templates/tasks/task_update.html:13
+#: templates/users/user_update.html:17
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: templates/statuses/status_create.html:7
+#: templates/statuses/status_list.html:7
+msgid "Create status"
+msgstr "Создать статус"
+
+#: templates/statuses/status_delete.html:9
+msgid "Deleting a status"
+msgstr "Удалить статул"
+
+#: templates/statuses/status_update.html:9
+msgid "Change status"
+msgstr "Изменить статус"
+
+#: templates/tasks/task_create.html:7 templates/tasks/task_list.html:8
+msgid "Create task"
+msgstr "Создать задачу"
+
+#: templates/tasks/task_delete.html:9
+msgid "Deleting a task"
+msgstr "Удалить задачу"
+
+#: templates/tasks/task_detail.html:15 templates/tasks/task_list.html:72
+msgid "Author"
+msgstr "Автор"
+
+#: templates/tasks/task_detail.html:19 templates/tasks/task_list.html:28
+#: templates/tasks/task_list.html:73
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: templates/tasks/task_detail.html:23 templates/tasks/task_list.html:15
+#: templates/tasks/task_list.html:71
+msgid "Status"
+msgstr "Статус"
+
+#: templates/tasks/task_detail.html:27
+msgid "Created at"
+msgstr "Дата создания"
+
+#: templates/tasks/task_detail.html:32
+msgid "Labels:"
+msgstr "Метки"
+
+#: templates/tasks/task_list.html:41
+msgid "Label"
+msgstr "Метка"
+
+#: templates/tasks/task_list.html:57
+msgid "Only your tasks"
+msgstr "Только свои задачи"
+
+#: templates/tasks/task_update.html:9
+msgid "Change task"
+msgstr "Изменить задачу"
+
+#: templates/users/user_create.html:15
+msgid "Зарегистрировать"
+msgstr ""
+
+#: templates/users/user_create.html:20
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: templates/users/user_create.html:20
+msgid "Authorization"
+msgstr "Авторизоваться"
+
+#: templates/users/user_delete.html:10
+msgid "Deleting a user"
+msgstr "Удалить пользователя"
+
+#: templates/users/user_list.html:6
+msgid "Usesr"
+msgstr "Пользователь"
+
+#: templates/users/user_list.html:11
+msgid "Nickname"
+msgstr "Имя пользователя"
+
+#: templates/users/user_list.html:12
+msgid "Full Name"
+msgstr "Полное имя"
+
+#: templates/users/user_update.html:9
+msgid "Change user"
+msgstr "Изменить пользователя"
+
+#: users/forms.py:13
+msgid "Имя"
+msgstr "Имя"
+
+#: users/forms.py:16
+msgid "Фамилия"
+msgstr ""
+
+#: users/middleware.py:19
+msgid "You do not have permission to change another user."
+msgstr "У вас нет разрешения на изменение другого пользователя."
+
+#: users/views.py:33
+msgid "Пользователь успешно зарегистрирован"
+msgstr ""
+
+#: users/views.py:68
+msgid "Пользователь успешно обновлен"
+msgstr ""
+
+#: users/views.py:84
+msgid "Пользователь успешно удален"
+msgstr ""
+
+#: users/views.py:93
+msgid "Cannot delete user because it is in use"
+msgstr "Невозможно удалить пользователя, так как он используется"
+
+#: views.py:28
+msgid "Вы залогинены"
+msgstr ""
+
+#: views.py:37
+msgid "Вы разлогинены"
+msgstr ""
+
+#: views.py:46
+msgid "You are not authorized! Please log in."
+msgstr "Вы не авторизованы! Пожалуйста, войдите в систему."
