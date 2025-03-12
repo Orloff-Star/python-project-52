@@ -143,9 +143,9 @@ LANGUAGES = [
     ('ru', _('Russian')),
 ]
 
-'''LOCALE_PATHS = [
+LOCALE_PATHS = [
     BASE_DIR / 'task_manager.locale',
-]'''
+]
 
 LANGUAGE_CODE = 'ru'
 
