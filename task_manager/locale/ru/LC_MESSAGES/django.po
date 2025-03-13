@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 15:05+0700\n"
+"POT-Creation-Date: 2025-03-13 15:21+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,6 +79,10 @@ msgstr "Невозможно удалить статус, так как он и�
 msgid "Status"
 msgstr "Статус"
 
+#: tasks/forms.py:15 templates/base.html:34 templates/labels/label_list.html:6
+msgid "Labels"
+msgstr "Метки"
+
 #: tasks/forms.py:22
 msgid "Description"
 msgstr "Описание"
@@ -87,10 +91,6 @@ msgstr "Описание"
 #: templates/tasks/task_list.html:28 templates/tasks/task_list.html:73
 msgid "Executor"
 msgstr "Исполнитель"
-
-#: tasks/forms.py:24 templates/base.html:34 templates/labels/label_list.html:6
-msgid "Labels"
-msgstr "Метки"
 
 #: tasks/views.py:71
 msgid "The task has been created successfully."
@@ -322,42 +322,3 @@ msgstr "Вы разлогинены"
 #: views.py:46
 msgid "You are not authorized! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, войдите в систему."
-
-#~ msgid "Save changes"
-#~ msgstr "Сохранить изменения"
-
-#~ msgid "User name"
-#~ msgstr "Имя пользователя"
-
-#~ msgid "New password"
-#~ msgstr "Новый пароль"
-
-#~ msgid "Зарегистрировать"
-#~ msgstr "Зарегистрировать"
-
-#~ msgid "Confirm new password"
-#~ msgstr "Повторите"
-
-#~ msgid "Вы залогинены"
-#~ msgstr "Вы залогинены"
-
-#~ msgid "Вы разлогинены"
-#~ msgstr "Вы разлогинены"
-
-#~ msgid "Пароль"
-#~ msgstr "Пароль"
-
-#~ msgid "Имя"
-#~ msgstr "Имя"
-
-#~ msgid "Фамилия"
-#~ msgstr "Фамилия"
-
-#~ msgid "Пользователь успешно зарегистрирован"
-#~ msgstr "Пользователь успешно зарегистрирован"
-
-#~ msgid "Пользователь успешно обновлен"
-#~ msgstr "Пользователь успешно обновлен"
-
-#~ msgid "Пользователь успешно удален"
-#~ msgstr "Пользователь успешно удален"

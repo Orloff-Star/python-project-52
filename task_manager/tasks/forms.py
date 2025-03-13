@@ -12,7 +12,7 @@ class TaskForm(forms.ModelForm):
         queryset=Label.objects.all(),
         widget=forms.SelectMultiple(attrs={'class': 'form-select'}),
         required=False,
-        label='Labels'
+        label=_('Labels')
     )
 
     class Meta:
@@ -21,5 +21,5 @@ class TaskForm(forms.ModelForm):
         labels = {
             'description': _('Description'),
             'executor': _('Executor'),
-            'labels': _('Labels'),
+#            'labels': _('Labels'),
         }
