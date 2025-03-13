@@ -11,9 +11,9 @@ class TaskForm(forms.ModelForm):
     status = forms.ModelChoiceField(queryset=Status.objects.all(), label=_("Status"))
     executor = forms.ModelChoiceField(
         queryset=User.objects.all(),
-        required=False,
-        label=_('Executor'),
-        widget=forms.Select(attrs={'class': 'form-select'})  # Добавьте стили, если нужно
+        required=False,        
+        widget=forms.Select(attrs={'class': 'form-select'}),
+        label=_('Executor')
     )
     labels = forms.ModelMultipleChoiceField(
         queryset=Label.objects.all(),
