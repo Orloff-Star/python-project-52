@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 11:24+0700\n"
+"POT-Creation-Date: 2025-03-13 14:05+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,6 +51,12 @@ msgstr "Английский"
 #: settings.py:144
 msgid "Russian"
 msgstr "Русский"
+
+#: statuses/forms.py:7 templates/labels/label_list.html:12
+#: templates/statuses/status_list.html:12 templates/tasks/task_list.html:70
+#: users/forms.py:13
+msgid "Name"
+msgstr "Имя"
 
 #: statuses/views.py:26
 msgid "The status has been created successfully."
@@ -158,11 +164,6 @@ msgstr "Да, удалить"
 #: templates/users/user_delete.html:15
 msgid "Сancellation"
 msgstr "Отмена"
-
-#: templates/labels/label_list.html:12 templates/statuses/status_list.html:12
-#: templates/tasks/task_list.html:70 users/forms.py:13
-msgid "Name"
-msgstr "Имя"
 
 #: templates/labels/label_list.html:13 templates/statuses/status_list.html:13
 #: templates/tasks/task_list.html:74 templates/users/user_list.html:13
