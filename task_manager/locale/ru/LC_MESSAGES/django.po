@@ -151,7 +151,7 @@ msgstr "Вы уверены, что хотите удалить"
 #: templates/statuses/status_delete.html:13 templates/tasks/task_delete.html:13
 #: templates/users/user_delete.html:14
 msgid "Yes, delete it!"
-msgstr "Да, удалить!"
+msgstr "Да, удалить"
 
 #: templates/labels/label_delete.html:14
 #: templates/statuses/status_delete.html:14 templates/tasks/task_delete.html:14
