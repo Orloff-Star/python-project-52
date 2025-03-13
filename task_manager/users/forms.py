@@ -29,7 +29,7 @@ class RegisterForm(UserCreationForm):
 
 class UpdateForm(UserChangeForm):
     password1 = forms.CharField(
-        label=_('New password'),
+        label=_('Password'),
         widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
         required=False,
     )

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 10:43+0700\n"
+"POT-Creation-Date: 2025-03-13 11:19+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,10 +21,10 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: form.py:9
-msgid "User name"
-msgstr "Имя пользователя"
+msgid "Имя пользователя"
+msgstr ""
 
-#: form.py:10
+#: form.py:10 users/forms.py:32
 msgid "Password"
 msgstr "Пароль"
 
@@ -145,7 +145,7 @@ msgstr "Удалить метку"
 #: templates/statuses/status_delete.html:11 templates/tasks/task_delete.html:11
 #: templates/users/user_delete.html:12
 msgid "Are you sure you want to delete"
-msgstr "Вы уверены, что хотите удалить?"
+msgstr "Вы уверены, что хотите удалить"
 
 #: templates/labels/label_delete.html:13
 #: templates/statuses/status_delete.html:13 templates/tasks/task_delete.html:13
@@ -282,10 +282,6 @@ msgstr "Изменить пользователя"
 msgid "Surname"
 msgstr "Фамилия"
 
-#: users/forms.py:32
-msgid "New password"
-msgstr "Новый пароль"
-
 #: users/forms.py:37
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
@@ -321,6 +317,12 @@ msgstr "Вы разлогинены"
 #: views.py:46
 msgid "You are not authorized! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, войдите в систему."
+
+#~ msgid "User name"
+#~ msgstr "Имя пользователя"
+
+#~ msgid "New password"
+#~ msgstr "Новый пароль"
 
 #~ msgid "Зарегистрировать"
 #~ msgstr "Зарегистрировать"
