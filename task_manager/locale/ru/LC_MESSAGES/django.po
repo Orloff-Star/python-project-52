@@ -21,8 +21,6 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: form.py:9
-#, fuzzy
-#| msgid "Users"
 msgid "User name"
 msgstr "Имя пользователя"
 
@@ -249,8 +247,6 @@ msgid "Change task"
 msgstr "Изменить задачу"
 
 #: templates/users/user_create.html:15
-#, fuzzy
-#| msgid "Registration"
 msgid "Register"
 msgstr "Регистрация"
 
@@ -283,8 +279,6 @@ msgid "Change user"
 msgstr "Изменить пользователя"
 
 #: users/forms.py:16
-#, fuzzy
-#| msgid "Users"
 msgid "Surname"
 msgstr "Фамилия"
 
@@ -301,22 +295,16 @@ msgid "You do not have permission to change another user."
 msgstr "У вас нет разрешения на изменение другого пользователя."
 
 #: users/views.py:33
-#, fuzzy
-#| msgid "The task was successfully deleted."
 msgid "User successfully registered"
-msgstr "Задача успешно удалена"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: users/views.py:68
-#, fuzzy
-#| msgid "The task was successfully deleted."
 msgid "User successfully update"
-msgstr "Задача успешно удалена"
+msgstr "Пользователь успешно обновлен"
 
 #: users/views.py:84
-#, fuzzy
-#| msgid "The task was successfully deleted."
 msgid "User successfully deleted"
-msgstr "Задача успешно удалена"
+msgstr "Пользователь успешно удален"
 
 #: users/views.py:93
 msgid "Cannot delete user because it is in use"
