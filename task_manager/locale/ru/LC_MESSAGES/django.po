@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 14:59+0700\n"
+"POT-Creation-Date: 2025-03-13 15:05+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,6 +79,19 @@ msgstr "Невозможно удалить статус, так как он и�
 msgid "Status"
 msgstr "Статус"
 
+#: tasks/forms.py:22
+msgid "Description"
+msgstr "Описание"
+
+#: tasks/forms.py:23 templates/tasks/task_detail.html:19
+#: templates/tasks/task_list.html:28 templates/tasks/task_list.html:73
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: tasks/forms.py:24 templates/base.html:34 templates/labels/label_list.html:6
+msgid "Labels"
+msgstr "Метки"
+
 #: tasks/views.py:71
 msgid "The task has been created successfully."
 msgstr "Задача успешно создана"
@@ -110,10 +123,6 @@ msgstr "Статусы"
 #: templates/base.html:31 templates/tasks/task_list.html:7
 msgid "Tasks"
 msgstr "Задачи"
-
-#: templates/base.html:34 templates/labels/label_list.html:6
-msgid "Labels"
-msgstr "Метки"
 
 #: templates/base.html:40
 msgid "Exit"
@@ -221,11 +230,6 @@ msgstr "Удалить задачу"
 #: templates/tasks/task_detail.html:15 templates/tasks/task_list.html:72
 msgid "Author"
 msgstr "Автор"
-
-#: templates/tasks/task_detail.html:19 templates/tasks/task_list.html:28
-#: templates/tasks/task_list.html:73
-msgid "Executor"
-msgstr "Исполнитель"
 
 #: templates/tasks/task_detail.html:27
 msgid "Created at"
