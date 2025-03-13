@@ -39,7 +39,7 @@ class UserUpdateView(CheckAuthorizationViev, UpdateView):
     model = User
     form_class = UpdateForm
     template_name = 'users/user_update.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('user_list')
 
     def get_object(self, queryset=None):
         obj = super().get_object(queryset)
