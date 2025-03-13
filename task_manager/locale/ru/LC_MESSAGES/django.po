@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 14:40+0700\n"
+"POT-Creation-Date: 2025-03-13 14:59+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,9 +28,9 @@ msgstr ""
 msgid "Password"
 msgstr "Пароль"
 
-#: labels/forms.py:7 statuses/forms.py:7 templates/labels/label_list.html:12
-#: templates/statuses/status_list.html:12 templates/tasks/task_list.html:70
-#: users/forms.py:13
+#: labels/forms.py:7 statuses/forms.py:7 tasks/forms.py:9
+#: templates/labels/label_list.html:12 templates/statuses/status_list.html:12
+#: templates/tasks/task_list.html:70 users/forms.py:13
 msgid "Name"
 msgstr "Имя"
 
@@ -73,6 +73,11 @@ msgstr "Статус успешно удален."
 #: statuses/views.py:54
 msgid "Cannot delete status because it is in use"
 msgstr "Невозможно удалить статус, так как он используется"
+
+#: tasks/forms.py:10 templates/tasks/task_detail.html:23
+#: templates/tasks/task_list.html:15 templates/tasks/task_list.html:71
+msgid "Status"
+msgstr "Статус"
 
 #: tasks/views.py:71
 msgid "The task has been created successfully."
@@ -221,11 +226,6 @@ msgstr "Автор"
 #: templates/tasks/task_list.html:73
 msgid "Executor"
 msgstr "Исполнитель"
-
-#: templates/tasks/task_detail.html:23 templates/tasks/task_list.html:15
-#: templates/tasks/task_list.html:71
-msgid "Status"
-msgstr "Статус"
 
 #: templates/tasks/task_detail.html:27
 msgid "Created at"
