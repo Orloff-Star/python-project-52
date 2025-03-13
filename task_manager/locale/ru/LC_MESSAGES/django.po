@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 11:19+0700\n"
+"POT-Creation-Date: 2025-03-13 11:24+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,8 +188,8 @@ msgstr "Изменить метку"
 #: templates/labels/label_update.html:13
 #: templates/statuses/status_update.html:13 templates/tasks/task_update.html:13
 #: templates/users/user_update.html:17
-msgid "Save changes"
-msgstr "Сохранить изменения"
+msgid "Сhange"
+msgstr "Изменить"
 
 #: templates/statuses/status_create.html:7
 #: templates/statuses/status_list.html:7
@@ -317,6 +317,9 @@ msgstr "Вы разлогинены"
 #: views.py:46
 msgid "You are not authorized! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, войдите в систему."
+
+#~ msgid "Save changes"
+#~ msgstr "Сохранить изменения"
 
 #~ msgid "User name"
 #~ msgstr "Имя пользователя"
