@@ -286,7 +286,7 @@ msgstr "Изменить пользователя"
 #, fuzzy
 #| msgid "Users"
 msgid "Surname"
-msgstr "Пользователи"
+msgstr "Фамилия"
 
 #: users/forms.py:32
 msgid "New password"
