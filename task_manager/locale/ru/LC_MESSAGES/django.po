@@ -248,7 +248,7 @@ msgstr "Изменить задачу"
 
 #: templates/users/user_create.html:15
 msgid "Register"
-msgstr "Регистрация"
+msgstr "Зарегистрировать"
 
 #: templates/users/user_create.html:20
 msgid "Already have an account?"
