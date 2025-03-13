@@ -24,7 +24,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Users"
 msgid "Username"
-msgstr "Пользователи"
+msgstr "Имя пользователя"
 
 #: form.py:10
 msgid "Password"
