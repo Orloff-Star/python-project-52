@@ -30,7 +30,7 @@ class UserCreateViev(CreateView):
         response = super().form_valid(form)
         messages.success(
             self.request,
-            _('Пользователь успешно зарегистрирован')
+            _('User successfully registered')
         )
         return response
 
@@ -47,7 +47,7 @@ class UserUpdateView(CheckAuthorizationViev, UpdateView):
             raise PermissionDenied
         return obj
 
-    def get_context_data(self, **kwargs):
+    '''def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.POST:
             context['password_form'] = UserPasswordChangeForm(
@@ -58,14 +58,14 @@ class UserUpdateView(CheckAuthorizationViev, UpdateView):
             context['password_form'] = UserPasswordChangeForm(
                 user=self.request.user
             )
-        return context
+        return context'''
 
     def form_valid(self, form):
-        context = self.get_context_data()
-        password_form = context['password_form']
-        if password_form.is_valid():
-            password_form.save()
-        messages.success(self.request, _('Пользователь успешно обновлен'))
+        password1 = form.cleaned_data.get('password1')
+        password2 = form.cleaned_data.get('password2')
+        if password1 and password1 == password2:
+            self.object.set_password(password1)
+        messages.success(self.request, _('User successfully update'))
         return super().form_valid(form)
 
 
@@ -81,7 +81,7 @@ class UserDeleteView(CheckAuthorizationViev, DeleteView):
         return obj
 
     def delete(self, request, *args, **kwargs):
-        messages.success(self.request, _('Пользователь успешно удален'))
+        messages.success(self.request, _('User successfully deleted'))
         return super().delete(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 11:48+0700\n"
+"POT-Creation-Date: 2025-03-13 10:26+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,14 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: form.py:9
+#, fuzzy
+#| msgid "Users"
+msgid "Username"
+msgstr "Пользователи"
+
 #: form.py:10
-msgid "Пароль"
+msgid "Password"
 msgstr "Пароль"
 
 #: labels/views.py:23
@@ -39,6 +45,14 @@ msgstr "Метка успешно удалена."
 #: labels/views.py:44
 msgid "Cannot delete label because it is in use"
 msgstr "Невозможно удалить метку, так как она используется"
+
+#: settings.py:143
+msgid "English"
+msgstr "Английский"
+
+#: settings.py:144
+msgid "Russian"
+msgstr "Русский"
 
 #: statuses/views.py:26
 msgid "The status has been created successfully."
@@ -148,7 +162,7 @@ msgid "Сancellation"
 msgstr "Отмена"
 
 #: templates/labels/label_list.html:12 templates/statuses/status_list.html:12
-#: templates/tasks/task_list.html:70
+#: templates/tasks/task_list.html:70 users/forms.py:13
 msgid "Name"
 msgstr "Имя"
 
@@ -235,8 +249,10 @@ msgid "Change task"
 msgstr "Изменить задачу"
 
 #: templates/users/user_create.html:15
-msgid "Зарегистрировать"
-msgstr "Зарегистрировать"
+#, fuzzy
+#| msgid "Registration"
+msgid "Register"
+msgstr "Регистрация"
 
 #: templates/users/user_create.html:20
 msgid "Already have an account?"
@@ -266,48 +282,84 @@ msgstr "Полное имя"
 msgid "Change user"
 msgstr "Изменить пользователя"
 
-#: users/forms.py:13
-msgid "Имя"
-msgstr "Имя"
-
 #: users/forms.py:16
-msgid "Фамилия"
-msgstr "Фамилия"
+#, fuzzy
+#| msgid "Users"
+msgid "Surname"
+msgstr "Пользователи"
+
+#: users/forms.py:32
+msgid "New password"
+msgstr "Новый пароль"
+
+#: users/forms.py:37
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
 
 #: users/middleware.py:19
 msgid "You do not have permission to change another user."
 msgstr "У вас нет разрешения на изменение другого пользователя."
 
 #: users/views.py:33
-msgid "Пользователь успешно зарегистрирован"
-msgstr "Пользователь успешно зарегистрирован"
+#, fuzzy
+#| msgid "The task was successfully deleted."
+msgid "User successfully registered"
+msgstr "Задача успешно удалена"
 
 #: users/views.py:68
-msgid "Пользователь успешно обновлен"
-msgstr "Пользователь успешно обновлен"
+#, fuzzy
+#| msgid "The task was successfully deleted."
+msgid "User successfully update"
+msgstr "Задача успешно удалена"
 
 #: users/views.py:84
-msgid "Пользователь успешно удален"
-msgstr "Пользователь успешно удален"
+#, fuzzy
+#| msgid "The task was successfully deleted."
+msgid "User successfully deleted"
+msgstr "Задача успешно удалена"
 
 #: users/views.py:93
 msgid "Cannot delete user because it is in use"
 msgstr "Невозможно удалить пользователя, так как он используется"
 
 #: views.py:28
-msgid "Вы залогинены"
+msgid "You are logged in"
 msgstr "Вы залогинены"
 
 #: views.py:37
-msgid "Вы разлогинены"
+msgid "You are logged out"
 msgstr "Вы разлогинены"
 
 #: views.py:46
 msgid "You are not authorized! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, войдите в систему."
 
-#~ msgid "English"
-#~ msgstr "Английский"
+#~ msgid "Зарегистрировать"
+#~ msgstr "Зарегистрировать"
 
-#~ msgid "Russian"
-#~ msgstr "Русский"
+#~ msgid "Confirm new password"
+#~ msgstr "Повторите"
+
+#~ msgid "Вы залогинены"
+#~ msgstr "Вы залогинены"
+
+#~ msgid "Вы разлогинены"
+#~ msgstr "Вы разлогинены"
+
+#~ msgid "Пароль"
+#~ msgstr "Пароль"
+
+#~ msgid "Имя"
+#~ msgstr "Имя"
+
+#~ msgid "Фамилия"
+#~ msgstr "Фамилия"
+
+#~ msgid "Пользователь успешно зарегистрирован"
+#~ msgstr "Пользователь успешно зарегистрирован"
+
+#~ msgid "Пользователь успешно обновлен"
+#~ msgstr "Пользователь успешно обновлен"
+
+#~ msgid "Пользователь успешно удален"
+#~ msgstr "Пользователь успешно удален"

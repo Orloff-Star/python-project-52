@@ -10,10 +10,10 @@ from django.contrib.auth.models import User
 
 
 class RegisterForm(UserCreationForm):
-    first_name = forms.CharField(label=_('Имя'),
+    first_name = forms.CharField(label=_('Name'),
                                  widget=forms.TextInput()
                                  )
-    last_name = forms.CharField(label=_('Фамилия'),
+    last_name = forms.CharField(label=_('Surname'),
                                 widget=forms.TextInput()
                                 )
 
@@ -28,9 +28,20 @@ class RegisterForm(UserCreationForm):
 
 
 class UpdateForm(UserChangeForm):
+    password1 = forms.CharField(
+        label=_('New password'),
+        widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
+        required=False,
+    )
+    password2 = forms.CharField(
+        label=_('Password confirmation'),
+        widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
+        required=False,
+    )
+
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username')
+        fields = ('first_name', 'last_name', 'username', 'password1', 'password2')
 
 
 class UserPasswordChangeForm(PasswordChangeForm):
