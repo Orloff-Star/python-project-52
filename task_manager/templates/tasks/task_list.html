@@ -30,7 +30,7 @@
           <option value="">---------</option>
           {% for executor in executors %}
           <option value="{{ executor.id }}" {% if request.GET.executor == executor.id|stringformat:"s" %}selected{% endif %}>
-            {{ executor.username }}
+            {{ executor.get_full_name }}
           </option>
           {% endfor %}
         </select>
