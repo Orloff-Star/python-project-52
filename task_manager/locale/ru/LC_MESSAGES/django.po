@@ -98,7 +98,7 @@ msgstr "Задача успешно создана"
 
 #: tasks/views.py:81
 msgid "Task changed successfully."
-msgstr "Задача успешно изменина"
+msgstr "Задача успешно изменена"
 
 #: tasks/views.py:88
 msgid "The task was successfully deleted."
