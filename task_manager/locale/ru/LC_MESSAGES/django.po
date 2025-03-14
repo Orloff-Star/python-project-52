@@ -301,7 +301,7 @@ msgstr "Подтверждение пароля"
 
 #: users/middleware.py:19
 msgid "You do not have permission to change another user."
-msgstr "У вас нет разрешения на изменение другого пользователя."
+msgstr "У вас нет прав для изменения"
 
 #: users/views.py:33
 msgid "User successfully registered"
