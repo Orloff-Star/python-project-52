@@ -78,19 +78,32 @@ class TaskUpdateView(CheckAuthorizationViev, UpdateView):
     form_class = TaskForm
     template_name = 'tasks/task_update.html'
     success_url = reverse_lazy('task_list')
-    success_message = _("Task changed successfully.")
+
+    def form_valid(self, form):
+        messages.success(self.request, _("Task changed successfully."))
+        return super().form_valid(form)
 
 
 class TaskDeleteView(CheckAuthorizationViev, UserPassesTestMixin, DeleteView):
     model = Task
     template_name = 'tasks/task_delete.html'
     success_url = reverse_lazy('task_list')
-    success_message = _("The task was successfully deleted.")
 
     def test_func(self):
         task = self.get_object()
         return self.request.user == task.author
-
+    
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.test_func():
+            messages.success(self.request, _("The task was successfully deleted."))
+            return super().delete(request, *args, **kwargs)
+        else:
+            messages.error(self.request, _("You do not have permission to delete this task."))
+            return redirect('task_list')
+        
     def handle_no_permission(self):
         messages.error(self.request, _("Only its author can delete a task."))
         return redirect('task_list')
+    
+    

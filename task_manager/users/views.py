@@ -93,6 +93,4 @@ class UserDeleteView(CheckAuthorizationViev, DeleteView):
                 _("Cannot delete user because it is in use")
             )
             return redirect('user_list')
-        
-        # Вызываем метод delete, если проверки прошли успешно
         return self.delete(request, *args, **kwargs)
