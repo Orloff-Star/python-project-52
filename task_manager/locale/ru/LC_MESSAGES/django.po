@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 15:56+0700\n"
+"POT-Creation-Date: 2025-03-14 14:12+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,21 +74,21 @@ msgstr "Статус успешно удален."
 msgid "Cannot delete status because it is in use"
 msgstr "Невозможно удалить статус, так как он используется"
 
-#: tasks/forms.py:11 templates/tasks/task_detail.html:23
+#: tasks/forms.py:11 templates/tasks/task_detail.html:24
 #: templates/tasks/task_list.html:15 templates/tasks/task_list.html:71
 msgid "Status"
 msgstr "Статус"
 
-#: tasks/forms.py:16 templates/tasks/task_detail.html:19
+#: tasks/forms.py:16 templates/tasks/task_detail.html:20
 #: templates/tasks/task_list.html:28 templates/tasks/task_list.html:73
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: tasks/forms.py:22 templates/base.html:34 templates/labels/label_list.html:6
+#: tasks/forms.py:23 templates/base.html:34 templates/labels/label_list.html:6
 msgid "Labels"
 msgstr "Метки"
 
-#: tasks/forms.py:28
+#: tasks/forms.py:33
 msgid "Description"
 msgstr "Описание"
 
@@ -185,13 +185,13 @@ msgid "Created"
 msgstr "Создать"
 
 #: templates/labels/label_list.html:24 templates/statuses/status_list.html:24
-#: templates/tasks/task_detail.html:42 templates/tasks/task_list.html:88
+#: templates/tasks/task_detail.html:43 templates/tasks/task_list.html:88
 #: templates/users/user_list.html:25
 msgid "Change"
 msgstr "Изменить"
 
 #: templates/labels/label_list.html:26 templates/statuses/status_list.html:26
-#: templates/tasks/task_detail.html:44 templates/tasks/task_list.html:90
+#: templates/tasks/task_detail.html:45 templates/tasks/task_list.html:90
 #: templates/users/user_list.html:27
 msgid "Delete"
 msgstr "Удалить"
@@ -227,15 +227,19 @@ msgstr "Создать задачу"
 msgid "Deleting a task"
 msgstr "Удалить задачу"
 
-#: templates/tasks/task_detail.html:15 templates/tasks/task_list.html:72
+#: templates/tasks/task_detail.html:7
+msgid "Task view"
+msgstr "Просмотр задачи"
+
+#: templates/tasks/task_detail.html:16 templates/tasks/task_list.html:72
 msgid "Author"
 msgstr "Автор"
 
-#: templates/tasks/task_detail.html:27
+#: templates/tasks/task_detail.html:28
 msgid "Created at"
 msgstr "Дата создания"
 
-#: templates/tasks/task_detail.html:32
+#: templates/tasks/task_detail.html:33
 msgid "Labels:"
 msgstr "Метки"
 

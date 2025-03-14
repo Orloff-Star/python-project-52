@@ -3,17 +3,18 @@
 {% load i18n django_bootstrap5 %}
 
 {% block content %}
-<div class="card">
+<div class="container wrapper flex-grow-1">
+  <h1 class="my-4">{% translate "Task view" %}</h1>
+  <div class="card">
     <div class="card-header bg-secondary text-white">
       <h2>{{ object.name }}</h2>
     </div>
     <div class="card-body bg-light">
-      <p>{{ object.description }}</p>
       <hr>
       <div class="container">
         <div class="row p-1">
           <div class="col">{% translate 'Author' %}</div>
-          <div class="col">{{ object.author }}</div>
+          <div class="col">{{ object.author.first_name }} {{ object.author.last_name }}</div>
         </div>
         <div class="row p-1">
           <div class="col">{% translate 'Executor' %}</div>
