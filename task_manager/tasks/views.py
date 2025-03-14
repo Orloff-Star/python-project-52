@@ -11,7 +11,7 @@ from task_manager.tasks.models import Task
 from .forms import TaskForm
 from django.utils.translation import gettext as _
 from django.contrib import messages
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.contrib.messages.views import SuccessMessageMixin
 from task_manager.statuses.models import Status
 from django.contrib.auth.models import User
@@ -88,22 +88,23 @@ class TaskDeleteView(CheckAuthorizationViev, UserPassesTestMixin, DeleteView):
     model = Task
     template_name = 'tasks/task_delete.html'
     success_url = reverse_lazy('task_list')
+    success_message = _("The task was successfully deleted.")
 
+    def post(self, request, *args, **kwargs):
+            task = get_object_or_404(Task, id=kwargs['pk'])
+            if request.user == task.author:
+                task.delete()
+                messages.success(request, self.success_message)
+            return redirect(self.success_url)
+    
     def test_func(self):
         task = self.get_object()
         return self.request.user == task.author
-    
-    def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        if self.test_func():
-            messages.success(self.request, _("The task was successfully deleted."))
-            return super().delete(request, *args, **kwargs)
-        else:
-            messages.error(self.request, _("You do not have permission to delete this task."))
-            return redirect('task_list')
-        
+
     def handle_no_permission(self):
         messages.error(self.request, _("Only its author can delete a task."))
         return redirect('task_list')
     
-    
+'''    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super().delete(request, *args, **kwargs)'''
