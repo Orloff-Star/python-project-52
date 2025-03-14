@@ -13,7 +13,8 @@ class TaskForm(forms.ModelForm):
         queryset=User.objects.all(),
         required=False,        
         widget=forms.Select(attrs={'class': 'form-select'}),
-        label=_('Executor')
+        label=_('Executor'),
+        to_field_name='id',
     )
     labels = forms.ModelMultipleChoiceField(
         queryset=Label.objects.all(),
@@ -21,6 +22,10 @@ class TaskForm(forms.ModelForm):
         required=False,
         label=_('Labels')
     )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['executor'].label_from_instance = lambda obj: f"{obj.first_name} {obj.last_name}"
 
     class Meta:
         model = Task
