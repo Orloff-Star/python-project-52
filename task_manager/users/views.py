@@ -94,4 +94,3 @@ class UserDeleteView(CheckAuthorizationViev, DeleteView):
             )
             return redirect('user_list')
         return self.delete(request, *args, **kwargs)
-
