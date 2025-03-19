@@ -1,7 +1,7 @@
 __pycache__
 dist/
 *.pyc
-.venv/
+venv/
 dist
 .env
 db.sqlite3
