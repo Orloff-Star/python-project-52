@@ -91,12 +91,12 @@ class TaskDeleteView(CheckAuthorizationViev, UserPassesTestMixin, DeleteView):
     success_message = _("The task was successfully deleted.")
 
     def post(self, request, *args, **kwargs):
-            task = get_object_or_404(Task, id=kwargs['pk'])
-            if request.user == task.author:
-                task.delete()
-                messages.success(request, self.success_message)
-            return redirect(self.success_url)
-    
+        task = get_object_or_404(Task, id=kwargs['pk'])
+        if request.user == task.author:
+            task.delete()
+            messages.success(request, self.success_message)
+        return redirect(self.success_url)
+
     def test_func(self):
         task = self.get_object()
         return self.request.user == task.author
@@ -104,7 +104,3 @@ class TaskDeleteView(CheckAuthorizationViev, UserPassesTestMixin, DeleteView):
     def handle_no_permission(self):
         messages.error(self.request, _("Only its author can delete a task."))
         return redirect('task_list')
-    
-'''    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)'''

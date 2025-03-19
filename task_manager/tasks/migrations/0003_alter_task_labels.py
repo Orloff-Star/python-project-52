@@ -14,6 +14,9 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='task',
             name='labels',
-            field=models.ManyToManyField(blank=True, related_name='tasks', to='labels.label'),
+            field=models.ManyToManyField(blank=True,
+                                         related_name='tasks',
+                                         to='labels.label'
+                                         ),
         ),
     ]

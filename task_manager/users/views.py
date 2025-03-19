@@ -7,7 +7,7 @@ from django.views.generic import (
     DeleteView
 )
 from django.contrib.auth.models import User
-from .forms import RegisterForm, UpdateForm, UserPasswordChangeForm
+from .forms import RegisterForm, UpdateForm
 from django.utils.translation import gettext as _
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied

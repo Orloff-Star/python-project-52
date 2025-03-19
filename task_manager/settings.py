@@ -37,7 +37,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'python-project-52-r60m.onrender.com',
-    '127.0.0.1', 
+    '127.0.0.1',
     'localhost',
     'webserver'
 ]
