@@ -46,7 +46,7 @@ _Alternatively you can skip this step and use **SQLite** database locally._
 To use the application, you need to clone the repository to your computer. This is done using the `git clone` command. Clone the project:
 
 ```bash
->> git clone https://github.com/zhukata/Task_manager && cd Task_manager
+>> git clone git@github.com:Orloff-Star/python-project-52.git && cd Task_manager
 ```
 
 After that install all necessary dependencies:
