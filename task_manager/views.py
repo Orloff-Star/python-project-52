@@ -4,9 +4,10 @@ from django.contrib.auth.views import LogoutView
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import LoginView as AuthLoginView
 from django.contrib import messages
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from django.http import HttpResponse
 from task_manager.form import CustomAuthenticationForm
 import logging
@@ -16,34 +17,27 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 
-class LoginView(AuthLoginView):
+class LoginView(SuccessMessageMixin, AuthLoginView):
     form_class = CustomAuthenticationForm
     template_name = 'login.html'
     redirect_authenticated_user = True
-
-    def form_valid(self, form):
-        # Добавляем сообщение об успешном входе
-        messages.success(
-            self.request,
-            _('You are logged in')
-        )
-        return super().form_valid(form)
+    success_message = _('You are logged in')
 
 
 class CustomLogoutView(LogoutView):
     def dispatch(self, request, *args, **kwargs):
         logout(request)
 #        response = super().dispatch(request, *args, **kwargs)
-        messages.info(request, _("You are logged out"))
+        messages.info(request, _('You are logged out'))
         return redirect(reverse('home'))
 
 
-class CheckAuthorizationViev(LoginRequiredMixin):
+class CheckAuthorizationView(LoginRequiredMixin):
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             messages.error(
                 request,
-                _("You are not authorized! Please log in.")
+                _('You are not authorized! Please log in.')
             )
             return redirect('user_login')
         return super().dispatch(request, *args, **kwargs)
@@ -60,5 +54,5 @@ def test_error(request):
         # Логируем ошибку
         logger.error(str(e), exc_info=True)
         return HttpResponse(
-            "Произошла ошибка, но она была залогирована в Rollbar."
+            'Произошла ошибка, но она была залогирована в Rollbar.'
         )

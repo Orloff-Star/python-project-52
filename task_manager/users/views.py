@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from task_manager.views import CheckAuthorizationViev
+from task_manager.views import CheckAuthorizationView
 from django.views.generic import (
     ListView,
     CreateView,
@@ -8,7 +8,7 @@ from django.views.generic import (
 )
 from django.contrib.auth.models import User
 from .forms import RegisterForm, UpdateForm
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import redirect
@@ -35,7 +35,7 @@ class UserCreateViev(CreateView):
         return response
 
 
-class UserUpdateView(CheckAuthorizationViev, UpdateView):
+class UserUpdateView(CheckAuthorizationView, UpdateView):
     model = User
     form_class = UpdateForm
     template_name = 'users/user_update.html'
@@ -69,7 +69,7 @@ class UserUpdateView(CheckAuthorizationViev, UpdateView):
         return super().form_valid(form)
 
 
-class UserDeleteView(CheckAuthorizationViev, DeleteView):
+class UserDeleteView(CheckAuthorizationView, DeleteView):
     model = User
     template_name = 'users/user_delete.html'
     success_url = reverse_lazy('user_list')
@@ -90,7 +90,7 @@ class UserDeleteView(CheckAuthorizationViev, DeleteView):
                 self.object.executor_tasks.exists()):
             messages.error(
                 request,
-                _("Cannot delete user because it is in use")
+                _('Cannot delete user because it is in use')
             )
             return redirect('user_list')
         return self.delete(request, *args, **kwargs)
