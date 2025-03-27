@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-14 14:34+0700\n"
+"POT-Creation-Date: 2025-03-27 16:11+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: form.py:9
+#: form.py:8
 msgid "Имя пользователя"
 msgstr ""
 
-#: form.py:10 users/forms.py:32
+#: form.py:9
 msgid "Password"
 msgstr "Пароль"
 
@@ -50,11 +50,11 @@ msgstr "Метка успешно удалена"
 msgid "Cannot delete label because it is in use"
 msgstr "Невозможно удалить метку, так как она используется"
 
-#: settings.py:143
+#: settings.py:142
 msgid "English"
 msgstr "Английский"
 
-#: settings.py:144
+#: settings.py:143
 msgid "Russian"
 msgstr "Русский"
 
@@ -74,37 +74,37 @@ msgstr "Статус успешно удален."
 msgid "Cannot delete status because it is in use"
 msgstr "Невозможно удалить статус, так как он используется"
 
-#: tasks/forms.py:11 templates/tasks/task_detail.html:25
+#: tasks/forms.py:13 templates/tasks/task_detail.html:25
 #: templates/tasks/task_list.html:15 templates/tasks/task_list.html:73
 msgid "Status"
 msgstr "Статус"
 
-#: tasks/forms.py:16 templates/tasks/task_detail.html:21
+#: tasks/forms.py:19 templates/tasks/task_detail.html:21
 #: templates/tasks/task_list.html:28 templates/tasks/task_list.html:75
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: tasks/forms.py:23 templates/base.html:34 templates/labels/label_list.html:6
+#: tasks/forms.py:26 templates/base.html:34 templates/labels/label_list.html:6
 msgid "Labels"
 msgstr "Метки"
 
-#: tasks/forms.py:33
+#: tasks/forms.py:38
 msgid "Description"
 msgstr "Описание"
 
-#: tasks/views.py:71
+#: tasks/views.py:66
 msgid "The task has been created successfully."
 msgstr "Задача успешно создана"
 
-#: tasks/views.py:81
+#: tasks/views.py:78
 msgid "Task changed successfully."
 msgstr "Задача успешно изменена"
 
-#: tasks/views.py:88
+#: tasks/views.py:89
 msgid "The task was successfully deleted."
 msgstr "Задача успешно удалена"
 
-#: tasks/views.py:95
+#: tasks/views.py:96
 msgid "Only its author can delete a task."
 msgstr "Задачу может удалить только ее автор"
 
@@ -162,19 +162,19 @@ msgid "Deleting a label"
 msgstr "Удалить метку"
 
 #: templates/labels/label_delete.html:11
-#: templates/statuses/status_delete.html:11 templates/tasks/task_delete.html:11
+#: templates/statuses/status_delete.html:11 templates/tasks/task_delete.html:12
 #: templates/users/user_delete.html:12
 msgid "Are you sure you want to delete"
 msgstr "Вы уверены, что хотите удалить"
 
 #: templates/labels/label_delete.html:13
-#: templates/statuses/status_delete.html:13 templates/tasks/task_delete.html:13
+#: templates/statuses/status_delete.html:13 templates/tasks/task_delete.html:14
 #: templates/users/user_delete.html:14
 msgid "Yes, delete it!"
 msgstr "Да, удалить"
 
 #: templates/labels/label_delete.html:14
-#: templates/statuses/status_delete.html:14 templates/tasks/task_delete.html:14
+#: templates/statuses/status_delete.html:14 templates/tasks/task_delete.html:15
 #: templates/users/user_delete.html:15
 msgid "Сancellation"
 msgstr "Отмена"
@@ -206,6 +206,10 @@ msgstr "Изменить метку"
 msgid "Сhange"
 msgstr "Изменить"
 
+#: templates/messages.html:7
+msgid "Close"
+msgstr "Закрыть"
+
 #: templates/statuses/status_create.html:7
 #: templates/statuses/status_list.html:7
 msgid "Create status"
@@ -223,7 +227,7 @@ msgstr "Изменить статус"
 msgid "Create task"
 msgstr "Создать задачу"
 
-#: templates/tasks/task_delete.html:9
+#: templates/tasks/task_delete.html:10
 msgid "Deleting a task"
 msgstr "Удалить задачу"
 
@@ -295,38 +299,58 @@ msgstr "Изменить пользователя"
 msgid "Surname"
 msgstr "Фамилия"
 
-#: users/forms.py:37
+#: users/forms.py:32
+msgid "New password"
+msgstr "Пароль"
+
+#: users/forms.py:39
+msgid "Enter your new password"
+msgstr "Пароль"
+
+#: users/forms.py:42
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
-#: users/middleware.py:19
-msgid "You do not have permission to change another user."
-msgstr "У вас нет прав для изменения"
+#: users/forms.py:49
+msgid "To confirm, please enter your password again."
+msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
+
+#: users/forms.py:61
+msgid "Password is required"
+msgstr "Требуется пароль"
+
+#: users/forms.py:64
+msgid "The two password fields didn't match."
+msgstr "Пароли не совпадают"
+
+#: users/mixins.py:9
+msgid "You do not have permission to modify another user."
+msgstr "У вас нет прав для изменения другого пользователя."
 
 #: users/views.py:33
 msgid "User successfully registered"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: users/views.py:68
-msgid "User successfully update"
+#: users/views.py:44
+msgid "User successfully updated"
 msgstr "Пользователь успешно изменен"
 
-#: users/views.py:84
+#: users/views.py:55
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: users/views.py:93
+#: users/views.py:64
 msgid "Cannot delete user because it is in use"
 msgstr "Невозможно удалить пользователя, так как он используется"
 
-#: views.py:28
+#: views.py:24
 msgid "You are logged in"
 msgstr "Вы залогинены"
 
-#: views.py:37
+#: views.py:31
 msgid "You are logged out"
 msgstr "Вы разлогинены"
 
-#: views.py:46
+#: views.py:40
 msgid "You are not authorized! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, войдите в систему."

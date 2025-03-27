@@ -1,0 +1,345 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-27 15:53+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: form.py:8
+msgid "Имя пользователя"
+msgstr ""
+
+#: form.py:9
+msgid "Password"
+msgstr "Password"
+
+#: labels/forms.py:7 statuses/forms.py:7 tasks/forms.py:10
+#: templates/labels/label_list.html:12 templates/statuses/status_list.html:12
+#: templates/tasks/task_list.html:72 users/forms.py:13
+msgid "Name"
+msgstr "Name"
+
+#: labels/views.py:23
+msgid "The_label_has_been_created_successfully."
+msgstr "The label has been created successfully."
+
+#: labels/views.py:31
+msgid "Label_changed_successfully."
+msgstr "Label changed successfully."
+
+#: labels/views.py:38
+msgid "The_label_was_successfully_deleted."
+msgstr "The label was successfully deleted."
+
+#: labels/views.py:44
+msgid "Cannot_delete_label_because_it_is_in_use"
+msgstr "Cannot delete label because it is in use"
+
+#: settings.py:142
+msgid "English"
+msgstr "English"
+
+#: settings.py:143
+msgid "Russian"
+msgstr "Russian"
+
+#: statuses/views.py:26
+msgid "The_status_has_been_created_successfully."
+msgstr "The status has been created successfully."
+
+#: statuses/views.py:37
+msgid "Status_changed_successfully."
+msgstr "Status changed successfully."
+
+#: statuses/views.py:47
+msgid "The_status_was_successfully_deleted."
+msgstr "The status was successfully deleted."
+
+#: statuses/views.py:54
+msgid "Cannot_delete_status_because_it_is_in_use"
+msgstr "Cannot delete status because it is in use"
+
+#: tasks/forms.py:13 templates/tasks/task_detail.html:25
+#: templates/tasks/task_list.html:15 templates/tasks/task_list.html:73
+msgid "Status"
+msgstr "Status"
+
+#: tasks/forms.py:19 templates/tasks/task_detail.html:21
+#: templates/tasks/task_list.html:28 templates/tasks/task_list.html:75
+msgid "Executor"
+msgstr "Executor"
+
+#: tasks/forms.py:26 templates/base.html:34 templates/labels/label_list.html:6
+msgid "Labels"
+msgstr "Labels"
+
+#: tasks/forms.py:38
+msgid "Description"
+msgstr "Description"
+
+#: tasks/views.py:66
+msgid "The_task_has_been_created_successfully."
+msgstr "he task has been created successfully."
+
+#: tasks/views.py:78
+msgid "Task_changed_successfully."
+msgstr "Task changed successfully."
+
+#: tasks/views.py:89
+msgid "The_task_was_successfully_deleted."
+msgstr "The task was successfully deleted."
+
+#: tasks/views.py:96
+msgid "Only_its_author_can_delete_a_task."
+msgstr "Only its author can delete a task."
+
+#: templates/base.html:14
+msgid "Task_Manager"
+msgstr "Task Manager"
+
+#: templates/base.html:21
+msgid "Users"
+msgstr "Users"
+
+#: templates/base.html:28 templates/statuses/status_list.html:6
+msgid "Statuses"
+msgstr "Statuses"
+
+#: templates/base.html:31 templates/tasks/task_list.html:7
+msgid "Tasks"
+msgstr "Tasks"
+
+#: templates/base.html:40
+msgid "Exit"
+msgstr "Exit"
+
+#: templates/base.html:46 templates/login.html:7
+msgid "Entrance"
+msgstr "Entrance"
+
+#: templates/base.html:49 templates/users/user_create.html:9
+msgid "Registration"
+msgstr "Registration"
+
+#: templates/index.html:9
+msgid "Hello_from_hexlet"
+msgstr "Hello from hexlet"
+
+#: templates/index.html:10
+msgid "Practical_programming_courses"
+msgstr "Practical programming courses"
+
+#: templates/index.html:12
+msgid "Learn_more"
+msgstr "Learn more"
+
+#: templates/labels/label_create.html:7 templates/labels/label_list.html:7
+msgid "Create_label"
+msgstr "Create label"
+
+#: templates/labels/label_create.html:12
+#: templates/statuses/status_create.html:13 templates/tasks/task_create.html:12
+msgid "Create"
+msgstr "Create"
+
+#: templates/labels/label_delete.html:9
+msgid "Deleting_a_label"
+msgstr "Deleting a label"
+
+#: templates/labels/label_delete.html:11
+#: templates/statuses/status_delete.html:11 templates/tasks/task_delete.html:12
+#: templates/users/user_delete.html:12
+msgid "Are_you_sure_you_want_to_delete"
+msgstr "Are you sure you want to delete"
+
+#: templates/labels/label_delete.html:13
+#: templates/statuses/status_delete.html:13 templates/tasks/task_delete.html:14
+#: templates/users/user_delete.html:14
+msgid "Yes,_delete_it!"
+msgstr "Yes, delete it!"
+
+#: templates/labels/label_delete.html:14
+#: templates/statuses/status_delete.html:14 templates/tasks/task_delete.html:15
+#: templates/users/user_delete.html:15
+msgid "Сancellation"
+msgstr "Сancellation"
+
+#: templates/labels/label_list.html:13 templates/statuses/status_list.html:13
+#: templates/tasks/task_list.html:76 templates/users/user_list.html:13
+msgid "Created"
+msgstr "Created"
+
+#: templates/labels/label_list.html:24 templates/statuses/status_list.html:24
+#: templates/tasks/task_detail.html:44 templates/tasks/task_list.html:90
+#: templates/users/user_list.html:25
+msgid "Change"
+msgstr "Change"
+
+#: templates/labels/label_list.html:26 templates/statuses/status_list.html:26
+#: templates/tasks/task_detail.html:46 templates/tasks/task_list.html:92
+#: templates/users/user_list.html:27
+msgid "Delete"
+msgstr "Delete"
+
+#: templates/labels/label_update.html:9
+msgid "Change_label"
+msgstr "Change label"
+
+#: templates/labels/label_update.html:13
+#: templates/statuses/status_update.html:13 templates/tasks/task_update.html:13
+#: templates/users/user_update.html:17
+msgid "Сhange"
+msgstr "Сhange"
+
+#: templates/messages.html:7
+msgid "Close"
+msgstr "Close"
+
+#: templates/statuses/status_create.html:7
+#: templates/statuses/status_list.html:7
+msgid "Create_status"
+msgstr "Create status"
+
+#: templates/statuses/status_delete.html:9
+msgid "Deleting_a_status"
+msgstr "Deleting a status"
+
+#: templates/statuses/status_update.html:9
+msgid "Change_status"
+msgstr "Change status"
+
+#: templates/tasks/task_create.html:7 templates/tasks/task_list.html:8
+msgid "Create_task"
+msgstr "Create task"
+
+#: templates/tasks/task_delete.html:10
+msgid "Deleting_a_task"
+msgstr "Deleting a task"
+
+#: templates/tasks/task_detail.html:7
+msgid "Task_view"
+msgstr "Task view"
+
+#: templates/tasks/task_detail.html:17 templates/tasks/task_list.html:74
+msgid "Author"
+msgstr "Author"
+
+#: templates/tasks/task_detail.html:29
+msgid "Created_at"
+msgstr "Created at"
+
+#: templates/tasks/task_detail.html:34
+msgid "Labels:"
+msgstr "Labels"
+
+#: templates/tasks/task_list.html:41
+msgid "Label"
+msgstr "Label"
+
+#: templates/tasks/task_list.html:57
+msgid "Only_your_tasks"
+msgstr "Only your tasks"
+
+#: templates/tasks/task_list.html:62
+msgid "Show"
+msgstr "Show"
+
+#: templates/tasks/task_update.html:9
+msgid "Change_task"
+msgstr "Change task"
+
+#: templates/users/user_create.html:15
+msgid "Register"
+msgstr "Register"
+
+#: templates/users/user_create.html:20
+msgid "Already_have_an_account?"
+msgstr "Already have an account?"
+
+#: templates/users/user_create.html:20
+msgid "Authorization"
+msgstr "Authorization"
+
+#: templates/users/user_delete.html:10
+msgid "Deleting_a_user"
+msgstr "Deleting a user"
+
+#: templates/users/user_list.html:6
+msgid "Usesr"
+msgstr "Usesr"
+
+#: templates/users/user_list.html:11
+msgid "Nickname"
+msgstr "Nickname"
+
+#: templates/users/user_list.html:12
+msgid "Full_Name"
+msgstr "Full Name"
+
+#: templates/users/user_update.html:9
+msgid "Change_user"
+msgstr "Change user"
+
+#: users/forms.py:16
+msgid "Surname"
+msgstr "Surname"
+
+#: users/forms.py:32
+msgid "New_password"
+msgstr "New password"
+
+#: users/forms.py:36
+msgid "Leave_blank_if_you_don't_want_to_change_the_password"
+msgstr "Leave blank if you don't want to change the password"
+
+#: users/forms.py:39
+msgid "Password_confirmation"
+msgstr "Password confirmation"
+
+#: users/forms.py:54
+msgid "The_two_password_fields_didn't_match."
+msgstr "The two password fields didn't match."
+
+#: users/mixins.py:9
+msgid "You_do_not_have_permission_to_modify_another_user."
+msgstr "You do not have permission to modify another user."
+
+#: users/views.py:33
+msgid "User_successfully_registered"
+msgstr "User successfully registered"
+
+#: users/views.py:44
+msgid "User_successfully_updated"
+msgstr "User successfully updated"
+
+#: users/views.py:55
+msgid "User_successfully_deleted"
+msgstr "User successfully deleted"
+
+#: users/views.py:64
+msgid "Cannot_delete_user_because_it_is_in_use"
+msgstr "Cannot delete user because it is in use"
+
+#: views.py:24
+msgid "You_are_logged_in"
+msgstr "You are logged in"
+
+#: views.py:31
+msgid "You_are_logged_out"
+msgstr "You are logged out"
+
+#: views.py:40
+msgid "You_are_not_authorized!_Please_log_in."
+msgstr "You are not authorized! Please log in."

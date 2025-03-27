@@ -76,9 +76,6 @@ class TaskUpdateView(CheckAuthorizationView, SuccessMessageMixin, UpdateView):
     template_name = 'tasks/task_update.html'
     success_url = reverse_lazy('task_list')
     success_message = _('Task changed successfully.')
-    
-    def form_valid(self, form):
-        return super().form_valid(form)
 
 
 class TaskDeleteView(CheckAuthorizationView,
