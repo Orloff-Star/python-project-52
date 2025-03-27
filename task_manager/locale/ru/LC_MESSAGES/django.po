@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-27 16:11+0700\n"
+"POT-Creation-Date: 2025-03-27 16:34+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Имя пользователя"
 msgstr ""
 
-#: form.py:9
+#: form.py:9 users/forms.py:32
 msgid "Password"
 msgstr "Пароль"
 
@@ -299,10 +299,6 @@ msgstr "Изменить пользователя"
 msgid "Surname"
 msgstr "Фамилия"
 
-#: users/forms.py:32
-msgid "New password"
-msgstr "Пароль"
-
 #: users/forms.py:39
 msgid "Enter your new password"
 msgstr "Пароль"
@@ -315,11 +311,11 @@ msgstr "Подтверждение пароля"
 msgid "To confirm, please enter your password again."
 msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
 
-#: users/forms.py:61
+#: users/forms.py:66
 msgid "Password is required"
 msgstr "Требуется пароль"
 
-#: users/forms.py:64
+#: users/forms.py:69
 msgid "The two password fields didn't match."
 msgstr "Пароли не совпадают"
 
@@ -327,19 +323,19 @@ msgstr "Пароли не совпадают"
 msgid "You do not have permission to modify another user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: users/views.py:33
+#: users/views.py:31
 msgid "User successfully registered"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: users/views.py:44
+#: users/views.py:42
 msgid "User successfully updated"
 msgstr "Пользователь успешно изменен"
 
-#: users/views.py:55
+#: users/views.py:53
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 
-#: users/views.py:64
+#: users/views.py:62
 msgid "Cannot delete user because it is in use"
 msgstr "Невозможно удалить пользователя, так как он используется"
 
@@ -354,3 +350,6 @@ msgstr "Вы разлогинены"
 #: views.py:40
 msgid "You are not authorized! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, войдите в систему."
+
+#~ msgid "New password"
+#~ msgstr "Пароль"
